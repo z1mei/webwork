@@ -304,7 +304,12 @@ button { cursor: pointer; border: none; font-family: inherit; }
 }
 
 /* Unique Avatar Colors */
-.avatar-zeng { background: linear-gradient(135deg, #ef4444, #f97316); }
+.avatar-zeng { 
+    background-image: url('../image/暴龙兽图片.png'); 
+    background-size: cover; 
+    background-position: center; 
+    color: transparent; 
+}
 .avatar-liang { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
 .avatar-zhang { background: linear-gradient(135deg, #10b981, #14b8a6); }
 
