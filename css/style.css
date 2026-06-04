@@ -647,8 +647,8 @@ footer {
 .g1-rank { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 1rem; }
 
 /* Game 2: Aim Trainer */
-.g2-area { cursor: crosshair; }
-.target-circle { position: absolute; border-radius: 50%; background: radial-gradient(circle, #ef4444 30%, white 30%, white 50%, #ef4444 50%, #ef4444 70%, white 70%, white 90%, #ef4444 90%); transform: translate(-50%, -50%); cursor: crosshair; user-select: none; animation: popIn 0.2s ease-out; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.g2-area { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='black' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='black' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='black' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='black'/%3E%3C/svg%3E") 12 12, crosshair; }
+.target-circle { position: absolute; border-radius: 50%; background: radial-gradient(circle, #ef4444 30%, white 30%, white 50%, #ef4444 50%, #ef4444 70%, white 70%, white 90%, #ef4444 90%); transform: translate(-50%, -50%); cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='black' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='black' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='black' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='black'/%3E%3C/svg%3E") 12 12, crosshair; user-select: none; animation: popIn 0.2s ease-out; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 @keyframes popIn { 0% { transform: translate(-50%, -50%) scale(0); } 100% { transform: translate(-50%, -50%) scale(1); } }
 
 /* Game 3: Memory Match */
