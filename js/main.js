@@ -1,26 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Dark Mode Toggle
+    // 1. Theme Toggle (Light, Dark, Auto)
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = themeToggleBtn.querySelector('i');
     const htmlEl = document.documentElement;
     
-    // Check local storage for theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        htmlEl.setAttribute('data-theme', 'dark');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    // Load saved theme or default to 'auto'
+    let currentThemeMode = localStorage.getItem('theme') || 'auto';
+
+    function applyTheme(mode) {
+        if (mode === 'dark') {
+            htmlEl.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'fa-solid fa-moon';
+            themeToggleBtn.setAttribute('title', '深色模式 (点击切换为自动模式)');
+        } else if (mode === 'light') {
+            htmlEl.removeAttribute('data-theme');
+            themeIcon.className = 'fa-solid fa-sun';
+            themeToggleBtn.setAttribute('title', '浅色模式 (点击切换为深色模式)');
+        } else { // auto
+            const hour = new Date().getHours();
+            // Daytime is 6:00 to 18:00
+            if (hour >= 6 && hour < 18) {
+                htmlEl.removeAttribute('data-theme');
+            } else {
+                htmlEl.setAttribute('data-theme', 'dark');
+            }
+            themeIcon.className = 'fa-solid fa-circle-half-stroke';
+            themeToggleBtn.setAttribute('title', '自动模式 (点击切换为浅色模式)');
+        }
     }
 
+    applyTheme(currentThemeMode);
+
     themeToggleBtn.addEventListener('click', () => {
-        if (htmlEl.getAttribute('data-theme') === 'dark') {
-            htmlEl.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'light');
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        if (currentThemeMode === 'auto') {
+            currentThemeMode = 'light';
+        } else if (currentThemeMode === 'light') {
+            currentThemeMode = 'dark';
         } else {
-            htmlEl.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            currentThemeMode = 'auto';
         }
+        localStorage.setItem('theme', currentThemeMode);
+        applyTheme(currentThemeMode);
     });
 
     // 2. Typewriter Effect
@@ -36,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (charIndex < textsToType[textIndex].length) {
             typewriterEl.textContent += textsToType[textIndex].charAt(charIndex);
             charIndex++;
-            setTimeout(typeText, typingDelay);
+            const currentDelay = textIndex === 0 ? 60 : 180;
+            setTimeout(typeText, currentDelay);
         } else {
             setTimeout(eraseText, newTextDelay);
         }
@@ -46,11 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (charIndex > 0) {
             typewriterEl.textContent = textsToType[textIndex].substring(0, charIndex - 1);
             charIndex--;
-            setTimeout(eraseText, erasingDelay);
+            const currentEraseDelay = textIndex === 0 ? 30 : 80;
+            setTimeout(eraseText, currentEraseDelay);
         } else {
             textIndex++;
             if (textIndex >= textsToType.length) textIndex = 0;
-            setTimeout(typeText, typingDelay + 500);
+            setTimeout(typeText, 500);
         }
     }
     
@@ -118,43 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Random Speaker Widget
-    const randomBtn = document.getElementById('random-speaker-btn');
-    const randomToast = document.getElementById('random-result');
-    const members = ['曾英棋', '梁砾俊', '张鹏晖'];
-    let isSpinning = false;
 
-    randomBtn.addEventListener('click', () => {
-        if (isSpinning) return;
-        isSpinning = true;
-        
-        // Add spin animation to icon
-        const icon = randomBtn.querySelector('i');
-        icon.classList.add('fa-spin');
-        
-        let count = 0;
-        const maxCount = 15; // Flashing effect
-        
-        const interval = setInterval(() => {
-            const randomMember = members[Math.floor(Math.random() * members.length)];
-            randomToast.textContent = `🎲 抽取中: ${randomMember}`;
-            randomToast.classList.add('show');
-            count++;
-            
-            if (count >= maxCount) {
-                clearInterval(interval);
-                const finalMember = members[Math.floor(Math.random() * members.length)];
-                randomToast.innerHTML = `🎉 恭喜 <strong>${finalMember}</strong> 成为天选发言人！`;
-                icon.classList.remove('fa-spin');
-                isSpinning = false;
-                
-                // Hide toast after 3 seconds
-                setTimeout(() => {
-                    randomToast.classList.remove('show');
-                }, 3000);
-            }
-        }, 100);
-    });
 
     // 5. Easter Egg (T-Rex Roar)
     const footerLogo = document.getElementById('footer-logo');
@@ -194,5 +180,40 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             trexContainer.classList.remove('active');
         }, 3000);
+    } // Missing brace added here
+
+    // Force page to top on reload and clear hash to prevent auto-scrolling down
+    if (window.location.hash) {
+        window.history.replaceState(null, null, window.location.pathname);
     }
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // 6. Apple-style Scroll Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOptions = {
+        threshold: 0.1, // Trigger when 10% is visible
+        rootMargin: "0px 0px -100px 0px" // Require element to be 100px inside viewport before triggering
+    };
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                // Only remove the 'active' class if the element leaves the viewport from the BOTTOM.
+                // This prevents animations from replaying when scrolling back UP the page.
+                if (entry.boundingClientRect.top > 0) {
+                    entry.target.classList.remove('active');
+                }
+            }
+        });
+    }, revealOptions);
+    
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
 });
