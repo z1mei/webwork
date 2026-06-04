@@ -24,16 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Typewriter Effect
-    const textToType = "We are T-Rex Vanguard.";
+    const textsToType = ["We are T-Rex Vanguard.", "我们是暴龙护卫队。"];
     const typingDelay = 100;
+    const erasingDelay = 50;
+    const newTextDelay = 2000;
     const typewriterEl = document.getElementById('typewriter');
-    let typeIndex = 0;
+    let textIndex = 0;
+    let charIndex = 0;
 
     function typeText() {
-        if (typeIndex < textToType.length) {
-            typewriterEl.textContent += textToType.charAt(typeIndex);
-            typeIndex++;
+        if (charIndex < textsToType[textIndex].length) {
+            typewriterEl.textContent += textsToType[textIndex].charAt(charIndex);
+            charIndex++;
             setTimeout(typeText, typingDelay);
+        } else {
+            setTimeout(eraseText, newTextDelay);
+        }
+    }
+
+    function eraseText() {
+        if (charIndex > 0) {
+            typewriterEl.textContent = textsToType[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, erasingDelay);
+        } else {
+            textIndex++;
+            if (textIndex >= textsToType.length) textIndex = 0;
+            setTimeout(typeText, typingDelay + 500);
         }
     }
     
