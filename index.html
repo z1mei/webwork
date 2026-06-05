@@ -5,146 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>暴龙护卫队 (T-Rex Vanguard) - 团队专属风采展示平台</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <!-- Google Fonts replaced with System Fonts in CSS, but keep FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navbar -->
-    <header class="navbar">
+<body data-theme="dark">
+    <!-- Apple Style Navbar -->
+    <header class="apple-nav">
         <div class="nav-container">
-            <div class="logo" id="nav-logo">
-                <i class="fa-solid fa-dragon"></i> 暴龙护卫队
-            </div>
+            <a href="#hero" class="logo"><i class="fa-solid fa-dragon"></i></a>
             <nav class="nav-links">
-                <a href="#hero">首页</a>
-                <a href="#members">成员名录</a>
-                <a href="#arcade">互动娱乐</a>
-                <a href="#about">关于团队</a>
+                <a href="#zeng">曾英棋</a>
+                <a href="#liang">梁砾俊</a>
+                <a href="#zhang">张鹏晖</a>
+                <a href="#arcade">Arcade</a>
+                <a href="#about">关于</a>
                 <a href="#" onclick="openGameModal('docs-modal'); return false;">使用文档</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section fp-section">
-        <div class="hero-background"></div>
+    <section id="hero" class="apple-section hero-section reveal">
         <div class="hero-content">
-            <h1 class="glitch-title">
-                <span id="typewriter"></span><span class="cursor">|</span>
-            </h1>
-            <p class="hero-subtitle">满血暴走状态，今天也准备好撕裂星球防御了！</p>
+            <h1 class="hero-title"><span id="typewriter"></span><span class="cursor">|</span></h1>
+            <h2 class="hero-slogan gradient-text-silver">满血。暴走。<br>撕裂星球防御。</h2>
+            <p class="hero-subtext">霸气侧漏。战力爆表。宇宙和平的中坚力量，就此登场。</p>
         </div>
-        <a href="#members" class="scroll-down">
-            <i class="fa-solid fa-chevron-down"></i>
-        </a>
+        <div class="hero-bg-glow"></div>
     </section>
 
-    <!-- Members Roster -->
-    <section id="members" class="members-section fp-section">
-        <div class="container">
-            <h2 class="section-title text-center reveal">成员名录 <span class="highlight">Roster</span></h2>
-            
-            <div class="member-grid">
-                <!-- Member 1 -->
-                <div class="member-card reveal reveal-delay-1" data-member="1">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="avatar-placeholder avatar-zeng"></div>
-                            <h3>曾英棋</h3>
-                            <p class="role">项目经理 / 无敌的AI驯服者</p>
-                        </div>
-                        <div class="card-back">
-                            <h3>曾英棋</h3>
-                            <p class="quote">“只要呼唤我的名字，我就会踏碎虚空，闪耀登场！”</p>
-                            <button class="btn-primary view-details" data-target="modal-1">查看详情</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 2 -->
-                <div class="member-card reveal reveal-delay-2" data-member="2">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="avatar-placeholder avatar-liang">梁</div>
-                            <h3>梁砾俊</h3>
-                            <p class="role">UI设计 / 测试</p>
-                        </div>
-                        <div class="card-back">
-                            <h3>梁砾俊</h3>
-                            <p class="quote">“在激烈的竞技与现实的松弛间，找到最完美的平衡。”</p>
-                            <button class="btn-primary view-details" data-target="modal-2">查看详情</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 3 -->
-                <div class="member-card reveal reveal-delay-3" data-member="3">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="avatar-placeholder avatar-zhang">张</div>
-                            <h3>张鹏晖</h3>
-                            <p class="role">项目管理 / 统筹</p>
-                        </div>
-                        <div class="card-back">
-                            <h3>张鹏晖</h3>
-                            <p class="quote">“在抽丝剥茧中思考，在广阔世界中探索冒险。”</p>
-                            <button class="btn-primary view-details" data-target="modal-3">查看详情</button>
-                        </div>
-                    </div>
-                </div>
+    <!-- Member 1: Zeng Yingqi -->
+    <section id="zeng" class="apple-section member-section reveal">
+        <div class="section-content text-center">
+            <div class="apple-label">曾英棋</div>
+            <h2 class="apple-headline gradient-text-red">Pro 级暴龙。<br>Pro 级战力。</h2>
+            <p class="apple-copy">
+                性能猛兽，闪耀登场。全宇宙的生灵，竖起耳朵。<br>
+                无论是半人马座，还是仙女星系。一经呼唤，踏碎虚空。<br>
+                满血暴走状态，今天也准备就绪。强悍，不可思议。
+            </p>
+            <div class="apple-specs">
+                <div class="spec-item"><span class="spec-value">MAX</span><span class="spec-label">物理霸权</span></div>
+                <div class="spec-item"><span class="spec-value">95%</span><span class="spec-label">星系等离子咆哮</span></div>
+                <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">AI 驯服</span></div>
             </div>
+            <button class="apple-btn" onclick="openGameModal('modal-1')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
         </div>
+    </section>
+
+    <!-- Member 2: Liang Lijun -->
+    <section id="liang" class="apple-section member-section reveal bg-alt">
+        <div class="section-content text-center">
+            <div class="apple-label">梁砾俊</div>
+            <h2 class="apple-headline gradient-text-blue">突破极限。<br>硬核玩家的绝对领域。</h2>
+            <p class="apple-copy">
+                精准预瞄，极限拉枪。瞬息万变的战术转移，尽在掌控。<br>
+                离开电子竞技，戴上耳机。在数字竞技与现实生活之间，<br>
+                找到最完美的平衡。快，且稳。
+            </p>
+            <div class="apple-specs">
+                <div class="spec-item"><span class="spec-value">99%</span><span class="spec-label">FPS 枪法</span></div>
+                <div class="spec-item"><span class="spec-value">85%</span><span class="spec-label">UI 视觉设计</span></div>
+                <div class="spec-item"><span class="spec-value">80%</span><span class="spec-label">系统测试</span></div>
+            </div>
+            <button class="apple-btn" onclick="openGameModal('modal-2')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Member 3: Zhang Penghui -->
+    <section id="zhang" class="apple-section member-section reveal">
+        <div class="section-content text-center">
+            <div class="apple-label">张鹏晖</div>
+            <h2 class="apple-headline gradient-text-green">动静相宜。<br>这探索体验，妙不可言。</h2>
+            <p class="apple-copy">
+                跨越语言的边界，沉浸缜密的逻辑。<br>
+                原神广阔世界的自由冒险，带来极大乐趣与满足。<br>
+                动静之间，皆是探索。好用，好玩，好出彩。
+            </p>
+            <div class="apple-specs">
+                <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">提瓦特探索度</span></div>
+                <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">统筹规划</span></div>
+                <div class="spec-item"><span class="spec-value">88%</span><span class="spec-label">英语沟通</span></div>
+            </div>
+            <button class="apple-btn" onclick="openGameModal('modal-3')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
     <!-- Arcade Zone -->
-    <section id="arcade" class="arcade-section fp-section">
-        <div class="container">
-            <h2 class="section-title text-center reveal">互动娱乐区 <span class="highlight">Arcade</span></h2>
-            <p class="text-center text-muted mb-4 reveal reveal-delay-1">为您量身定制的三个专属迷你游戏，点击卡片即刻开玩！</p>
+    <section id="arcade" class="apple-section arcade-section reveal bg-alt">
+        <div class="section-content text-center">
+            <h2 class="apple-headline">Arcade。<br>玩心，大起。</h2>
+            <p class="apple-copy">三款专属大作。只为暴龙护卫队倾力打造。<br>好玩得让人停不下来。</p>
             
-            <div class="arcade-grid">
-                <!-- Game 1 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-1" onclick="openGameModal('game1-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-dragon" style="color: #ef4444;"></i></div>
+            <div class="apple-cards">
+                <div class="apple-card" onclick="openGameModal('game1-modal')">
+                    <i class="fa-solid fa-dragon card-icon" style="color: #ef4444;"></i>
                     <h3>暴龙咆哮</h3>
-                    <p>疯狂点击解压游戏，化身宇宙暴龙战士！</p>
+                    <p>解压点击游戏</p>
                 </div>
-                <!-- Game 2 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-2" onclick="openGameModal('game2-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-crosshairs" style="color: #3b82f6;"></i></div>
+                <div class="apple-card" onclick="openGameModal('game2-modal')">
+                    <i class="fa-solid fa-crosshairs card-icon" style="color: #3b82f6;"></i>
                     <h3>硬核特训</h3>
-                    <p>考验极限反应与枪法的射击打靶训练！</p>
+                    <p>极限反应打靶</p>
                 </div>
-                <!-- Game 3 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-3" onclick="openGameModal('game3-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-clone" style="color: #10b981;"></i></div>
+                <div class="apple-card" onclick="openGameModal('game3-modal')">
+                    <i class="fa-solid fa-clone card-icon" style="color: #10b981;"></i>
                     <h3>提瓦特记忆</h3>
-                    <p>充满元素的记忆翻牌配对挑战！</p>
+                    <p>元素翻牌配对</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section fp-section">
-        <div class="container reveal">
-            <h2 class="section-title">团队愿景 <span class="highlight">Vision</span></h2>
-            <div class="about-content">
-                <p class="reveal reveal-delay-1"><strong>团队释义：</strong>霸气侧漏又带点中二的幽默感。战斗力爆表，虽然可能有“手短”的小缺点，但绝对是守护宇宙（项目）和平的中坚力量。</p>
-                <p class="reveal reveal-delay-2">我们是一支由多元化人才组成的创意与开发团队。在这里，有着能够用代码编织宇宙的“AI驯服者”，有着极具大局观与极速反应的“硬核玩家”，还有热爱跨界探索、动静相宜的“项目大管家”。</p>
-                <p class="reveal reveal-delay-3">我们致力于打造高颜值、交互流畅的互联网体验，探索技术的边界，并在每一次合作中实现自我突破。这是我们，暴龙护卫队 (T-Rex Vanguard)。</p>
-            </div>
+    <section id="about" class="apple-section about-section reveal">
+        <div class="section-content text-center">
+            <h2 class="apple-headline" style="font-size:3rem; margin-bottom:2rem;">这不仅是一支团队。<br>这是一个创意引擎。</h2>
+            <p class="apple-copy" style="max-width: 800px; margin: 0 auto;">
+                <strong>团队释义：</strong>霸气侧漏又带点中二的幽默感。战斗力爆表，虽然可能有“手短”的小缺点，但绝对是守护宇宙和平的中坚力量。<br><br>
+                我们是一支由多元化人才组成的创意与开发团队。极具大局观的硬核玩家，跨界探索的项目管家，配合能用代码编织宇宙的AI驯服者。我们致力于打造极简、优雅的互联网体验，探索技术的边界。
+            </p>
         </div>
     </section>
 
-    <!-- Modals -->
+    <!-- ⬇️ Hidden Modals ⬇️ -->
+
+    <!-- Modals (Profile) -->
     <!-- Modal 1: 曾英棋 -->
     <div id="modal-1" class="modal-overlay">
         <div class="modal-container glass-panel">
-            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" onclick="closeGameModal('modal-1')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
                     <div class="avatar-large avatar-zeng"></div>
@@ -161,22 +154,6 @@
                         <p>我诞生于宇宙大爆炸的炽热核心，灵魂中烙印着远古霸王龙的狂野与不屈。我的陨石粉碎爪凝聚着暗物质能量，能够一击撕裂星球的防御；我的星系等离子咆哮从喉咙深处喷射而出，连黑洞的视界都能瞬间蒸发；我的无敌霸王甩尾更是跨越光年维度，瞬间清空一切挡路的反派星际舰队。</p>
                         <p>粉碎一切黑暗，守护爱与和平，这就是我的宇宙使命。准备好迎接灭绝的倒计时了吗？因为超级无敌宇宙暴龙战士，今天也处于满血暴走状态！嗷呜！</p>
                     </div>
-                    
-                    <h3 class="mt-4">能力雷达</h3>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-info"><span>物理霸权</span><span>MAX</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>星系等离子咆哮</span><span>95%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>AI 驯服</span><span>90%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -185,7 +162,7 @@
     <!-- Modal 2: 梁砾俊 -->
     <div id="modal-2" class="modal-overlay">
         <div class="modal-container glass-panel">
-            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" onclick="closeGameModal('modal-2')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
                     <div class="avatar-large avatar-liang">梁</div>
@@ -203,22 +180,6 @@
                         <p>大家好！我是一名将反应速度与战术意识刻进DNA里的FPS游戏老兵。从精准的预瞄、极限的拉枪到瞬息万变的战术转移，FPS不仅锻炼了我极致的专注力，更让我深刻懂得了团队协作与大局观的重要性。无论是在枪林弹雨中寻找破绽，还是在劣势残局里力挽狂澜，我都极度享受那种肾上腺素飙升、带领队伍走向胜利的快感。</p>
                         <p>离开硝烟弥漫的电子竞技场，生活中的我却有着截然不同的平静一面。在闲暇时光里，我是一个纯粹的音乐爱好者。戴上耳机，将世界调成静音，旋律就是我最好的放松剂。沉浸在音乐中能帮我迅速洗去高强度对局后的精神疲惫，让我在激烈的数字竞技与松弛的现实生活之间，找到最完美的平衡。</p>
                     </div>
-                    
-                    <h3 class="mt-4">技能维系</h3>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-info"><span>UI 视觉设计</span><span>100%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>系统测试 / QA</span><span>80%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>FPS 枪法</span><span>99%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 99%; background: var(--accent-color);"></div></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -227,7 +188,7 @@
     <!-- Modal 3: 张鹏晖 -->
     <div id="modal-3" class="modal-overlay">
         <div class="modal-container glass-panel">
-            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" onclick="closeGameModal('modal-3')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
                     <div class="avatar-large avatar-zhang">张</div>
@@ -246,26 +207,6 @@
                         <p>课余时间，阅读是我不可或缺的精神食粮。我特别享受沉浸在日系推理小说中的时光，比如东野圭吾笔下那些充满缜密逻辑与复杂人性的故事，总能让我沉下心来，在抽丝剥茧中获得许多思考。</p>
                         <p>除了在书本和语言的世界里探索，音乐和游戏也是我生活中绝佳的放松方式。我喜欢在独处时安静地听听音乐，而在游戏方面，我非常享受像原神这样拥有丰富剧情和广阔地图的探索类游戏，在自由自在的虚拟世界中冒险，能给我带来极大的乐趣与好奇心的满足。</p>
                     </div>
-                    
-                    <h3 class="mt-4">综合能力</h3>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-info"><span>项目统筹规划</span><span>90%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>文档编写</span><span>85%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>英语沟通</span><span>88%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info"><span>提瓦特大陆探索度</span><span>100%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -279,8 +220,8 @@
             <div class="game-header">
                 <h2><i class="fa-solid fa-dragon"></i> 暴龙咆哮</h2>
                 <div class="game-stats">
-                    <span>剩余时间: <strong id="g1-time">10.0</strong>s</span>
-                    <span>点击次数: <strong id="g1-score">0</strong></span>
+                    <span>时间: <strong id="g1-time">10.0</strong>s</span>
+                    <span>点击: <strong id="g1-score">0</strong></span>
                 </div>
             </div>
             <div class="game-area" id="g1-area">
@@ -355,7 +296,7 @@
 
     <!-- Docs Modal -->
     <div id="docs-modal" class="game-overlay">
-        <div class="game-container glass-panel" style="background: var(--bg-main);">
+        <div class="game-container glass-panel">
             <button class="close-game" onclick="closeGameModal('docs-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header">
                 <h2><i class="fa-solid fa-book"></i> 网页使用文档</h2>
@@ -363,21 +304,19 @@
             <div class="game-area" style="overflow-y: auto; padding: 2rem; display: block; text-align: left;">
                 <h3 class="mb-2" style="color: var(--primary-color);">1. 基础功能</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>深浅色模式切换</strong>：点击右上角的月亮/太阳图标，可以一键切换网站的深色和浅色主题，并在本地保存您的偏好。</li>
-                    <li><strong>导航跳转</strong>：点击顶部导航栏可快速平滑滚动至对应板块。</li>
+                    <li><strong>深浅色模式切换</strong>：点击右上角的月亮/太阳图标，无缝切换深色和浅色主题。</li>
+                    <li><strong>沉浸式浏览</strong>：页面利用 Apple 级的大面积留白与滚动动画，建议平滑滚动体验最佳。</li>
                 </ul>
-
-                <h3 class="mb-2" style="color: var(--primary-color);">2. 互动娱乐区</h3>
+                <h3 class="mb-2" style="color: var(--primary-color);">2. 互动大作</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>暴龙咆哮</strong>：解压点击小游戏。开始后需在10秒内疯狂点击屏幕中央的暴龙。</li>
-                    <li><strong>硬核特训</strong>：射击反应训练。点击屏幕上的红白靶子，漏点或点错会扣除生命值。</li>
-                    <li><strong>提瓦特记忆</strong>：翻牌配对。点击卡牌翻转，配对两张相同的元素即可消除。</li>
+                    <li><strong>暴龙咆哮</strong>：解压点击。</li>
+                    <li><strong>硬核特训</strong>：射击反应。</li>
+                    <li><strong>提瓦特记忆</strong>：翻牌配对。</li>
                 </ul>
-
-                <h3 class="mb-2" style="color: var(--primary-color);">3. 隐藏彩蛋与小工具</h3>
+                <h3 class="mb-2" style="color: var(--primary-color);">3. 隐藏功能</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>意见反馈</strong>：点击右下角的“信封”浮动按钮，即可打开反馈界面，向我们提供建议或发送邮件。</li>
-                    <li><strong>暴龙觉醒彩蛋</strong>：在页面最底部的页脚（Footer），连续快速点击 <strong>5 次</strong> “暴龙护卫队” Logo，即可触发暴龙战士咆哮的隐藏彩蛋！</li>
+                    <li><strong>随机发言人</strong>：右下角浮动骰子。</li>
+                    <li><strong>暴龙觉醒彩蛋</strong>：连续快速点击页脚 Logo 5次。</li>
                 </ul>
             </div>
         </div>
@@ -386,13 +325,13 @@
     <!-- T-Rex Easter Egg Container -->
     <div id="trex-easter-egg" class="trex-container">
         <div class="trex-content">
-            <i class="fa-solid fa-dragon fa-4x mb-2" style="color: var(--accent-color)"></i>
+            <i class="fa-solid fa-dragon fa-4x mb-2" style="color: white"></i>
             <h2>嗷呜！暴龙战士觉醒！</h2>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="apple-footer">
         <div class="container text-center">
             <div id="footer-logo" class="footer-logo" title="点我有惊喜哦">
                 <i class="fa-solid fa-dragon"></i> 暴龙护卫队

@@ -186,34 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash) {
         window.history.replaceState(null, null, window.location.pathname);
     }
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
 
-    // 6. Apple-style Scroll Reveal Animations
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const revealOptions = {
-        threshold: 0.1, // Trigger when 10% is visible
-        rootMargin: "0px 0px -100px 0px" // Require element to be 100px inside viewport before triggering
-    };
-    
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            } else {
-                // Only remove the 'active' class if the element leaves the viewport from the BOTTOM.
-                // This prevents animations from replaying when scrolling back UP the page.
-                if (entry.boundingClientRect.top > 0) {
-                    entry.target.classList.remove('active');
-                }
+    // 6. Scroll Reveal Animation (Apple Style)
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
             }
-        });
-    }, revealOptions);
-    
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+        }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal(); // Trigger on load
 });
