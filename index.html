@@ -68,7 +68,7 @@
             </p>
             <div class="apple-specs">
                 <div class="spec-item"><span class="spec-value">99%</span><span class="spec-label">FPS 枪法</span></div>
-                <div class="spec-item"><span class="spec-value">85%</span><span class="spec-label">UI 视觉设计</span></div>
+                <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">UI 视觉设计</span></div>
                 <div class="spec-item"><span class="spec-value">80%</span><span class="spec-label">系统测试</span></div>
             </div>
             <button class="apple-btn" onclick="openGameModal('modal-2')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
@@ -140,7 +140,7 @@
             <button class="close-modal" onclick="closeGameModal('modal-1')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
-                    <div class="avatar-large avatar-zeng"></div>
+                    <div class="avatar-large avatar-zeng" style="background-image: url('image/曾英棋图片.png'); background-size: cover; background-position: center;"></div>
                     <h2>曾英棋</h2>
                     <p class="role-badge">项目经理 / 无敌的AI驯服者</p>
                     <div class="hobbies-tags">
@@ -290,7 +290,7 @@
     </div>
 
     <!-- Feedback Widget -->
-    <button class="fab" aria-label="意见反馈" title="意见反馈" onclick="openGameModal('feedback-modal')">
+    <button class="fab" aria-label="意见反馈" title="意见反馈" onclick="openModal('feedback-modal')">
         <i class="fa-solid fa-envelope"></i>
     </button>
 
@@ -315,9 +315,28 @@
                 </ul>
                 <h3 class="mb-2" style="color: var(--primary-color);">3. 隐藏功能</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>随机发言人</strong>：右下角浮动骰子。</li>
+                    <li><strong>意见反馈</strong>：右下角信封按钮，随时联系我们。</li>
                     <li><strong>暴龙觉醒彩蛋</strong>：连续快速点击页脚 Logo 5次。</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="game-overlay">
+        <div class="game-container glass-panel" style="max-width: 450px; height: auto; text-align: center; background: var(--bg-main); margin: 0 auto;">
+            <button class="close-game" onclick="closeGameModal('feedback-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="game-header" style="justify-content: center; border-bottom: none; padding-bottom: 0;">
+                <h2 style="margin: 0; font-size: 1.8rem;"><i class="fa-solid fa-paper-plane" style="color: var(--text-main);"></i> 期待您的反馈</h2>
+            </div>
+            <div class="game-area" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; background: transparent;">
+                <p style="color: var(--text-muted); margin: 0; line-height: 1.6; font-size: 1.1rem; text-align: center;">
+                    感谢您访问暴龙护卫队！如果您对我们的项目有任何意见、建议或发现了 Bug，随时欢迎联系我们。您的反馈是我们进步的动力。
+                </p>
+                <div class="feedback-email-box" style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); width: 100%;">
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">反馈专属邮箱</p>
+                    <p style="margin: 0; font-size: 1.4rem; font-weight: 800; color: var(--text-main); user-select: all;">2708203325@QQ.COM</p>
+                </div>
             </div>
         </div>
     </div>
@@ -339,25 +358,6 @@
             <p>Made with ❤️ by 暴龙护卫队. © 2026 All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Feedback Modal -->
-    <div id="feedback-modal" class="game-overlay">
-        <div class="game-container glass-panel" style="max-width: 450px; height: auto; text-align: center; background: var(--bg-main); margin: 0 auto;">
-            <button class="close-game" onclick="closeGameModal('feedback-modal')"><i class="fa-solid fa-xmark"></i></button>
-            <div class="game-header" style="justify-content: center; border-bottom: none; padding-bottom: 0;">
-                <h2 style="margin: 0; font-size: 1.8rem;"><i class="fa-solid fa-paper-plane" style="color: var(--primary-color);"></i> 期待您的反馈</h2>
-            </div>
-            <div class="game-area" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; background: transparent;">
-                <p style="color: var(--text-muted); margin: 0; line-height: 1.6; font-size: 1.1rem; text-align: center;">
-                    感谢您访问暴龙护卫队！如果您对我们的项目有任何意见、建议或发现了 Bug，随时欢迎联系我们。您的反馈是我们进步的动力。
-                </p>
-                <div class="feedback-email-box" style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); width: 100%;">
-                    <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">反馈专属邮箱</p>
-                    <p style="margin: 0; font-size: 1.4rem; font-weight: 800; color: var(--primary-color); user-select: all;">2708203325@QQ.COM</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="js/main.js"></script>
     <script src="js/games.js"></script>
