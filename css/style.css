@@ -195,11 +195,11 @@ a {
 
 /* Members Section */
 .apple-label {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    letter-spacing: 0.01em;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
 }
 
 .apple-headline {
@@ -218,11 +218,60 @@ a {
     margin-bottom: 2.5rem;
 }
 
-/* Specs */
-.apple-specs {
+.member-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.member-container.image-left {
+    flex-direction: row-reverse;
+}
+
+.member-container.image-right {
+    flex-direction: row;
+}
+
+.member-container .section-content {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
+}
+
+.member-container .member-image-wrapper {
+    flex: 1;
+    margin-top: 0;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    min-width: 0;
+}
+
+.member-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.member-image:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+/* Specs layout update for side-by-side */
+.apple-specs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -373,6 +422,51 @@ a {
     box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 }
 
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 4rem; /* Offset for navbar */
+    height: 100vh; /* Force exactly one screen */
+    overflow: hidden; /* Prevent scrolling, keep it pristine */
+    background-color: #000;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Prevents inline gap below image */
+    object-fit: contain; /* The image itself is now naturally 16:9 wide */
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    transition: transform 1s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+.hero-text-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem 5%;
+    width: 100%;
+    z-index: 2;
+    background-color: #000; /* Seamless blend */
+}
+
 .close-modal, .close-game {
     position: absolute;
     top: 1rem;
@@ -474,8 +568,32 @@ a {
 @media (max-width: 768px) {
     .apple-headline { font-size: 2.5rem; }
     .hero-slogan { font-size: 3rem; }
-    .apple-specs { flex-direction: column; gap: 1rem; }
-    .nav-links { display: none; /* simple mobile */ }
+    .apple-specs { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .nav-links { display: none; }
     .modal-body { flex-direction: column; }
     .modal-left, .modal-right { width: 100%; }
+    
+    .member-container.image-left, 
+    .member-container.image-right {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .member-container .section-content {
+        text-align: center;
+    }
+    
+    .text-left {
+        text-align: center !important;
+    }
+    
+    .apple-specs {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .apple-headline br,
+    .apple-copy br {
+        display: none;
+    }
 }

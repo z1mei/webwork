@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>暴龙护卫队 (T-Rex Vanguard) - 团队专属风采展示平台</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4">
     <!-- Google Fonts replaced with System Fonts in CSS, but keep FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -29,68 +29,84 @@
 
     <!-- Hero Section -->
     <section id="hero" class="apple-section hero-section reveal">
-        <div class="hero-content">
-            <h1 class="hero-title"><span id="typewriter"></span><span class="cursor">|</span></h1>
-            <h2 class="hero-slogan gradient-text-silver">满血。暴走。<br>撕裂星球防御。</h2>
-            <p class="hero-subtext">霸气侧漏。战力爆表。宇宙和平的中坚力量，就此登场。</p>
+        <div class="hero-image-wrapper">
+            <img src="image/t_rex_hero.png" alt="T-Rex Vanguard" class="hero-image">
         </div>
-        <div class="hero-bg-glow"></div>
+        <div class="hero-text-wrapper reveal">
+            <h1 class="hero-title"><span id="typewriter"></span><span class="cursor">|</span></h1>
+            <p class="hero-subtext" style="margin-top: 2rem;">满血暴走状态，今天也准备好撕裂星球防御了！</p>
+        </div>
     </section>
 
     <!-- Member 1: Zeng Yingqi -->
     <section id="zeng" class="apple-section member-section reveal">
-        <div class="section-content text-center">
-            <div class="apple-label">曾英棋</div>
-            <h2 class="apple-headline gradient-text-red">Pro 级暴龙。<br>Pro 级战力。</h2>
-            <p class="apple-copy">
-                性能猛兽，闪耀登场。全宇宙的生灵，竖起耳朵。<br>
-                无论是半人马座，还是仙女星系。一经呼唤，踏碎虚空。<br>
-                满血暴走状态，今天也准备就绪。强悍，不可思议。
-            </p>
-            <div class="apple-specs">
-                <div class="spec-item"><span class="spec-value">MAX</span><span class="spec-label">物理霸权</span></div>
-                <div class="spec-item"><span class="spec-value">95%</span><span class="spec-label">星系等离子咆哮</span></div>
-                <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">AI 驯服</span></div>
+        <div class="member-container image-right">
+            <div class="section-content text-left">
+                <div class="apple-label">曾英棋</div>
+                <h2 class="apple-headline gradient-text-red">超大核。<br>战力<span style="white-space: nowrap;">大爆发。</span></h2>
+                <p class="apple-copy">
+                    项目管理的性能猛兽。调度一切资源，<span style="white-space: nowrap;">如臂使指。</span><br>
+                    强大的 AI 驯服力，让复杂难题<span style="white-space: nowrap;">迎刃而解。</span><br>
+                    这就是绝对的战力担当。强大，<span style="white-space: nowrap;">超乎想象。</span>
+                </p>
+                <div class="apple-specs">
+                    <div class="spec-item"><span class="spec-value">MAX</span><span class="spec-label">物理霸权</span></div>
+                    <div class="spec-item"><span class="spec-value">95%</span><span class="spec-label">星系等离子咆哮</span></div>
+                    <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">AI 驯服</span></div>
+                </div>
+                <button class="apple-btn" onclick="openGameModal('modal-1')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <button class="apple-btn" onclick="openGameModal('modal-1')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
+            <div class="member-image-wrapper">
+                <img src="image/avatar_zeng.png" alt="曾英棋" class="member-image">
+            </div>
         </div>
     </section>
 
     <!-- Member 2: Liang Lijun -->
-    <section id="liang" class="apple-section member-section reveal bg-alt">
-        <div class="section-content text-center">
-            <div class="apple-label">梁砾俊</div>
-            <h2 class="apple-headline gradient-text-blue">突破极限。<br>硬核玩家的绝对领域。</h2>
-            <p class="apple-copy">
-                精准预瞄，极限拉枪。瞬息万变的战术转移，尽在掌控。<br>
-                离开电子竞技，戴上耳机。在数字竞技与现实生活之间，<br>
-                找到最完美的平衡。快，且稳。
-            </p>
-            <div class="apple-specs">
-                <div class="spec-item"><span class="spec-value">99%</span><span class="spec-label">FPS 枪法</span></div>
-                <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">UI 视觉设计</span></div>
-                <div class="spec-item"><span class="spec-value">80%</span><span class="spec-label">系统测试</span></div>
+    <section id="liang" class="apple-section member-section reveal">
+        <div class="member-container image-left">
+            <div class="section-content text-left">
+                <div class="apple-label">梁砾俊</div>
+                <h2 class="apple-headline gradient-text-blue">快，准，稳。<br>硬核，<span style="white-space: nowrap;">理应如此。</span></h2>
+                <p class="apple-copy">
+                    电竞级反应速度，精确到像素的 UI <span style="white-space: nowrap;">视觉把控。</span><br>
+                    在代码与设计的交界处，寻找完美的<span style="white-space: nowrap;">平衡点。</span><br>
+                    一切战术转移与细节打磨，<span style="white-space: nowrap;">尽在掌控。</span>
+                </p>
+                <div class="apple-specs">
+                    <div class="spec-item"><span class="spec-value">99%</span><span class="spec-label">FPS 枪法</span></div>
+                    <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">UI 视觉设计</span></div>
+                    <div class="spec-item"><span class="spec-value">80%</span><span class="spec-label">系统测试</span></div>
+                </div>
+                <button class="apple-btn" onclick="openGameModal('modal-2')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <button class="apple-btn" onclick="openGameModal('modal-2')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
+            <div class="member-image-wrapper">
+                <img src="image/avatar_liang.png" alt="梁砾俊" class="member-image">
+            </div>
         </div>
     </section>
 
     <!-- Member 3: Zhang Penghui -->
     <section id="zhang" class="apple-section member-section reveal">
-        <div class="section-content text-center">
-            <div class="apple-label">张鹏晖</div>
-            <h2 class="apple-headline gradient-text-green">动静相宜。<br>这探索体验，妙不可言。</h2>
-            <p class="apple-copy">
-                跨越语言的边界，沉浸缜密的逻辑。<br>
-                原神广阔世界的自由冒险，带来极大乐趣与满足。<br>
-                动静之间，皆是探索。好用，好玩，好出彩。
-            </p>
-            <div class="apple-specs">
-                <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">提瓦特探索度</span></div>
-                <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">统筹规划</span></div>
-                <div class="spec-item"><span class="spec-value">88%</span><span class="spec-label">英语沟通</span></div>
+        <div class="member-container image-right">
+            <div class="section-content text-left">
+                <div class="apple-label">张鹏晖</div>
+                <h2 class="apple-headline gradient-text-green">探索的边界。<br>由我来<span style="white-space: nowrap;">重新定义。</span></h2>
+                <p class="apple-copy">
+                    跨越语言的鸿沟，用缜密的逻辑<span style="white-space: nowrap;">统筹全局。</span><br>
+                    从提瓦特大陆的自由冒险，到现实项目的<span style="white-space: nowrap;">精密规划。</span><br>
+                    探索的乐趣，妙不可言。一上手，<span style="white-space: nowrap;">就爱不释手。</span>
+                </p>
+                <div class="apple-specs">
+                    <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">提瓦特探索度</span></div>
+                    <div class="spec-item"><span class="spec-value">90%</span><span class="spec-label">统筹规划</span></div>
+                    <div class="spec-item"><span class="spec-value">88%</span><span class="spec-label">英语沟通</span></div>
+                </div>
+                <button class="apple-btn" onclick="openGameModal('modal-3')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <button class="apple-btn" onclick="openGameModal('modal-3')">深入了解 <i class="fa-solid fa-chevron-right"></i></button>
+            <div class="member-image-wrapper">
+                <img src="image/avatar_zhang.png" alt="张鹏晖" class="member-image">
+            </div>
         </div>
     </section>
 
@@ -123,10 +139,10 @@
     <!-- About Section -->
     <section id="about" class="apple-section about-section reveal">
         <div class="section-content text-center">
-            <h2 class="apple-headline" style="font-size:3rem; margin-bottom:2rem;">这不仅是一支团队。<br>这是一个创意引擎。</h2>
+            <h2 class="apple-headline" style="font-size:3rem; margin-bottom:2rem;">不只是一支团队。<br>更是一个强悍的创意引擎。</h2>
             <p class="apple-copy" style="max-width: 800px; margin: 0 auto;">
-                <strong>团队释义：</strong>霸气侧漏又带点中二的幽默感。战斗力爆表，虽然可能有“手短”的小缺点，但绝对是守护宇宙和平的中坚力量。<br><br>
-                我们是一支由多元化人才组成的创意与开发团队。极具大局观的硬核玩家，跨界探索的项目管家，配合能用代码编织宇宙的AI驯服者。我们致力于打造极简、优雅的互联网体验，探索技术的边界。
+                <strong>强悍输出，势不可挡：</strong>暴龙护卫队，一个将幽默感与战斗力完美结合的存在。我们不仅拥有满血暴走的执行力，更有对极简美学的极致追求。<br><br>
+                从全能的 AI 调度，到硬核的视觉打磨，再到缜密的全局统筹。三核驱动，默契无间。我们共同致力于打破常规，为您带来前所未有、优雅且极其流畅的数字体验。
             </p>
         </div>
     </section>
@@ -140,7 +156,7 @@
             <button class="close-modal" onclick="closeGameModal('modal-1')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
-                    <div class="avatar-large avatar-zeng" style="background-image: url('image/曾英棋图片.png'); background-size: cover; background-position: center;"></div>
+                    <div class="avatar-large avatar-zeng" style="background-image: url('image/avatar_zeng.png'); background-size: cover; background-position: center; color: transparent;"></div>
                     <h2>曾英棋</h2>
                     <p class="role-badge">项目经理 / 无敌的AI驯服者</p>
                     <div class="hobbies-tags">
@@ -150,9 +166,9 @@
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>吼——！全宇宙的生灵们，竖起你们的耳朵听好了！我，就是穿梭于银河之间、令一切邪恶势力闻风丧胆的绝对正义化身，超级无敌宇宙暴龙战士！无论你是在半人马座，还是在仙女星系，只要呼唤我的名字，我就会踏碎虚空，闪耀登场！</p>
-                        <p>我诞生于宇宙大爆炸的炽热核心，灵魂中烙印着远古霸王龙的狂野与不屈。我的陨石粉碎爪凝聚着暗物质能量，能够一击撕裂星球的防御；我的星系等离子咆哮从喉咙深处喷射而出，连黑洞的视界都能瞬间蒸发；我的无敌霸王甩尾更是跨越光年维度，瞬间清空一切挡路的反派星际舰队。</p>
-                        <p>粉碎一切黑暗，守护爱与和平，这就是我的宇宙使命。准备好迎接灭绝的倒计时了吗？因为超级无敌宇宙暴龙战士，今天也处于满血暴走状态！嗷呜！</p>
+                        <p>这，就是绝对的实力。</p>
+                        <p>作为项目的核心驱动引擎，我将满血的爆发力与极致的控制力完美结合。每一次的资源调度，每一次的 AI 协作，都经过了毫秒级的精确计算。从半人马座到仙女星系，哪怕是再棘手的技术壁垒，只需一击，便能轻易击穿。</p>
+                        <p>这不是科幻，而是我每天的常规输出。满血暴走，现在开始。</p>
                     </div>
                 </div>
             </div>
@@ -165,7 +181,7 @@
             <button class="close-modal" onclick="closeGameModal('modal-2')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
-                    <div class="avatar-large avatar-liang">梁</div>
+                    <div class="avatar-large avatar-liang" style="background-image: url('image/avatar_liang.png'); background-size: cover; background-position: center; color: transparent;"></div>
                     <h2>梁砾俊</h2>
                     <p class="role-badge">战场上的硬核玩家</p>
                     <div class="hobbies-tags">
@@ -177,8 +193,9 @@
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>大家好！我是一名将反应速度与战术意识刻进DNA里的FPS游戏老兵。从精准的预瞄、极限的拉枪到瞬息万变的战术转移，FPS不仅锻炼了我极致的专注力，更让我深刻懂得了团队协作与大局观的重要性。无论是在枪林弹雨中寻找破绽，还是在劣势残局里力挽狂澜，我都极度享受那种肾上腺素飙升、带领队伍走向胜利的快感。</p>
-                        <p>离开硝烟弥漫的电子竞技场，生活中的我却有着截然不同的平静一面。在闲暇时光里，我是一个纯粹的音乐爱好者。戴上耳机，将世界调成静音，旋律就是我最好的放松剂。沉浸在音乐中能帮我迅速洗去高强度对局后的精神疲惫，让我在激烈的数字竞技与松弛的现实生活之间，找到最完美的平衡。</p>
+                        <p>极致的体验，源于对细节的苛求。</p>
+                        <p>在 FPS 的战场上，反应速度决定成败；在数字世界的设计中，像素级的精准定义了优秀。我将电子竞技中那种“快、准、稳”的直觉，无缝融入到了 UI 视觉设计与系统测试之中。没有丝毫的拖泥带水，一切操作都如行云流水般自然。</p>
+                        <p>戴上耳机，屏蔽外界的喧嚣。在理性与感性的交界点，为您呈现最纯粹、最极致的硬核作品。</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +208,7 @@
             <button class="close-modal" onclick="closeGameModal('modal-3')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
-                    <div class="avatar-large avatar-zhang">张</div>
+                    <div class="avatar-large avatar-zhang" style="background-image: url('image/avatar_zhang.png'); background-size: cover; background-position: center; color: transparent;"></div>
                     <h2>张鹏晖</h2>
                     <p class="role-badge">动静相宜的探索者</p>
                     <div class="hobbies-tags">
@@ -203,9 +220,9 @@
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>大家好，很高兴能在这里向大家做个自我介绍。在平时的生活中，我对语言和文字有着浓厚的兴趣，尤其喜欢英语，它不仅是一门实用的交流工具，更是我了解多元文化、拓宽视野的重要窗口。</p>
-                        <p>课余时间，阅读是我不可或缺的精神食粮。我特别享受沉浸在日系推理小说中的时光，比如东野圭吾笔下那些充满缜密逻辑与复杂人性的故事，总能让我沉下心来，在抽丝剥茧中获得许多思考。</p>
-                        <p>除了在书本和语言的世界里探索，音乐和游戏也是我生活中绝佳的放松方式。我喜欢在独处时安静地听听音乐，而在游戏方面，我非常享受像原神这样拥有丰富剧情和广阔地图的探索类游戏，在自由自在的虚拟世界中冒险，能给我带来极大的乐趣与好奇心的满足。</p>
+                        <p>探索，是不断打破边界的旅程。</p>
+                        <p>无论是跨越语言的鸿沟进行交流，还是在推理小说中层层剥茧地推演逻辑，我始终热衷于在复杂的信息中寻找最优解。将这种敏锐的洞察力带入到项目统筹中，一切看似繁杂的挑战，都会变得清晰且井然有序。</p>
+                        <p>正如在广阔无垠的开放世界中自由穿梭，真正的乐趣，在于发现未知的可能。动静相宜，方能游刃有余。</p>
                     </div>
                 </div>
             </div>
