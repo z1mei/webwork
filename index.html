@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- 流星背景 -->
+    <canvas id="meteor-canvas"></canvas>
+    <!-- 暴龙防御者 (大陨石事件) -->
+    <div id="trex-defender"><i class="fa-solid fa-dragon"></i></div>
     <!-- Navbar -->
     <header class="navbar">
         <div class="nav-container">
@@ -70,7 +74,7 @@
                 <div class="member-card reveal reveal-delay-2" data-member="2">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="avatar-placeholder avatar-liang">梁</div>
+                            <div class="avatar-placeholder avatar-liang"></div>
                             <h3>梁砾俊</h3>
                             <p class="role">UI设计 / 测试</p>
                         </div>
@@ -188,7 +192,7 @@
             <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
                 <div class="modal-left">
-                    <div class="avatar-large avatar-liang">梁</div>
+                    <div class="avatar-large avatar-liang"></div>
                     <h2>梁砾俊</h2>
                     <p class="role-badge">战场上的硬核玩家</p>
                     <div class="hobbies-tags">
@@ -207,8 +211,8 @@
                     <h3 class="mt-4">技能维系</h3>
                     <div class="skills">
                         <div class="skill-item">
-                            <div class="skill-info"><span>UI 视觉设计</span><span>100%</span></div>
-                            <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
+                            <div class="skill-info"><span>UI 视觉设计</span><span>95%</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-info"><span>系统测试 / QA</span><span>80%</span></div>
@@ -378,6 +382,7 @@
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
                     <li><strong>意见反馈</strong>：点击右下角的“信封”浮动按钮，即可打开反馈界面，向我们提供建议或发送邮件。</li>
                     <li><strong>暴龙觉醒彩蛋</strong>：在页面最底部的页脚（Footer），连续快速点击 <strong>5 次</strong> “暴龙护卫队” Logo，即可触发暴龙战士咆哮的隐藏彩蛋！</li>
+                    <li><strong>陨石来袭彩蛋</strong>：请等待 60 秒，一颗巨大的陨石将从天而降，暴龙护卫队将出击防御，有个小彩蛋等着你！请打开黑夜模式以获得更佳观赏体验。</li>
                 </ul>
             </div>
         </div>
