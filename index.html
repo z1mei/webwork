@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>暴龙护卫队 (T-Rex Vanguard) - 团队专属风采展示平台</title>
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=28">
     <!-- Google Fonts replaced with System Fonts in CSS, but keep FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,9 +21,7 @@
                 <a href="#about">关于</a>
                 <a href="#" onclick="openGameModal('docs-modal'); return false;">使用文档</a>
             </nav>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+            <a href="#" class="feedback-nav" onclick="openGameModal('feedback-modal'); return false;">反馈</a>
         </div>
     </header>
 
@@ -32,9 +30,9 @@
         <div class="hero-image-wrapper">
             <img src="image/t_rex_hero.png" alt="T-Rex Vanguard" class="hero-image">
         </div>
-        <div class="hero-text-wrapper reveal">
+        <div class="hero-text-wrapper">
             <h1 class="hero-title"><span id="typewriter"></span><span class="cursor">|</span></h1>
-            <p class="hero-subtext" style="margin-top: 2rem;">满血暴走状态，今天也准备好撕裂星球防御了！</p>
+            <p class="hero-subtext" style="margin-top: 0.5rem;">满血暴走状态，今天也准备好撕裂星球防御了！</p>
         </div>
     </section>
 
@@ -111,7 +109,7 @@
     </section>
 
     <!-- Arcade Zone -->
-    <section id="arcade" class="apple-section arcade-section bg-alt">
+    <section id="arcade" class="apple-section arcade-section" style="background-color: #000;">
         <div class="section-content text-center">
             <h2 class="apple-headline reveal">Arcade。<br>玩心，大起。</h2>
             <p class="apple-copy reveal delay-1">三款专属大作。只为暴龙护卫队倾力打造。<br>好玩得让人停不下来。</p>
@@ -293,7 +291,7 @@
                     <span>匹配: <strong id="g3-matches">0</strong>/8</span>
                 </div>
             </div>
-            <div class="game-area g3-area" id="g3-area">
+            <div class="game-area g3-area" id="g3-area" style="height: 450px;">
                 <button id="g3-start-btn" class="btn-primary game-start-btn" style="z-index:10; position:absolute;">开始探索</button>
                 <div id="g3-board" class="memory-board" style="display:none;"></div>
                 <div id="g3-result" class="game-result" style="display: none; z-index: 10;">
@@ -305,11 +303,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Feedback Widget -->
-    <button class="fab" aria-label="意见反馈" title="意见反馈" onclick="openGameModal('feedback-modal')">
-        <i class="fa-solid fa-envelope"></i>
-    </button>
 
     <!-- Docs Modal -->
     <div id="docs-modal" class="game-overlay">

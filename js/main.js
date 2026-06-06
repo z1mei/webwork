@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Toggle (Light, Dark, Auto)
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-    const htmlEl = document.documentElement;
+    if (themeToggleBtn) {
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const htmlEl = document.documentElement;
     
     // Load saved theme or default to 'auto'
     let currentThemeMode = localStorage.getItem('theme') || 'auto';
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', currentThemeMode);
         applyTheme(currentThemeMode);
     });
+    }
 
     // 2. Typewriter Effect
     const textsToType = ["We are T-Rex Vanguard.", "我们是暴龙护卫队。"];

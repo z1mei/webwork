@@ -72,7 +72,7 @@ function resetGame1() {
     g1StartBtn.style.display = 'block';
     g1Trex.style.display = 'none';
     g1Result.style.display = 'none';
-    g1Trex.style.transform = 'scale(1)';
+    g1Trex.style.setProperty('--trex-scale', '1');
 }
 
 function startGame1() {
@@ -116,7 +116,7 @@ g1Trex.addEventListener('mousedown', (e) => {
     
     // Growth effect
     const scale = Math.min(1 + (g1Score * 0.02), 2.5);
-    g1Trex.style.transform = `scale(${scale})`;
+    g1Trex.style.setProperty('--trex-scale', scale);
     
     // Particle effect
     const particle = document.createElement('div');
@@ -176,7 +176,7 @@ function resetGame2() {
 }
 
 function removeTargets() {
-    const targets = g2Area.querySelectorAll('.target-circle');
+    const targets = g2Area.querySelectorAll('.target');
     targets.forEach(t => t.remove());
 }
 
@@ -185,7 +185,7 @@ function spawnTarget() {
     removeTargets(); // ensure only 1 target at a time
     
     const target = document.createElement('div');
-    target.className = 'target-circle';
+    target.className = 'target';
     
     // random size between 30 and 60
     const size = Math.floor(Math.random() * 30) + 30;
@@ -304,6 +304,7 @@ let g3Moves = 0;
 let g3Matches = 0;
 let g3FlippedCards = [];
 let g3Locked = false;
+let g3MismatchTimeout = null;
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -321,6 +322,7 @@ function resetGame3() {
     g3Matches = 0;
     g3FlippedCards = [];
     g3Locked = false;
+    clearTimeout(g3MismatchTimeout);
     g3MovesDisplay.innerText = g3Moves;
     g3MatchesDisplay.innerText = g3Matches;
     g3StartBtn.style.display = 'block';
@@ -342,10 +344,8 @@ function startGame3() {
         card.dataset.index = index;
         
         card.innerHTML = `
-            <div class="memory-card-inner">
-                <div class="memory-card-front"><i class="fa-solid fa-question"></i></div>
-                <div class="memory-card-back"><i class="fa-solid ${icon}"></i></div>
-            </div>
+            <div class="front"><i class="fa-solid fa-question"></i></div>
+            <div class="back"><i class="fa-solid ${icon}"></i></div>
         `;
         
         card.addEventListener('click', () => flipCard(card));
@@ -396,7 +396,7 @@ function disableCards() {
 
 function unflipCards() {
     g3Locked = true;
-    setTimeout(() => {
+    g3MismatchTimeout = setTimeout(() => {
         g3FlippedCards[0].classList.remove('flipped');
         g3FlippedCards[1].classList.remove('flipped');
         g3FlippedCards = [];

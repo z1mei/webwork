@@ -149,16 +149,16 @@ a {
     opacity: 1;
 }
 
-.theme-toggle {
-    background: none;
-    border: none;
+.feedback-nav {
     color: var(--text-main);
-    cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 12px;
+    letter-spacing: -0.01em;
     opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.2s;
 }
 
-.theme-toggle:hover {
+.feedback-nav:hover {
     opacity: 1;
 }
 
@@ -398,6 +398,14 @@ a {
 .apple-card p {
     color: var(--text-muted);
     font-size: 1rem;
+    margin-top: 1rem;
+    flex-grow: 1;
+}
+
+/* Distinct gray background for arcade cards to contrast with #000 background */
+.arcade-section .apple-card {
+    background: #1c1c1e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Footer */
@@ -467,23 +475,28 @@ a {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-top: 4rem; /* Offset for navbar */
-    height: 100vh; /* Force exactly one screen */
-    overflow: hidden; /* Prevent scrolling, keep it pristine */
+    padding-top: 48px; /* Offset for navbar */
+    padding-bottom: 0; /* Remove inherited 4rem padding from apple-section! */
+    height: 100vh; /* Fallback */
+    height: 100dvh; /* Dynamic viewport height to prevent browser chrome from hiding the bottom */
+    width: 100%;
+    overflow: hidden; /* Lock scrolling for hero */
     background-color: #000;
 }
 
 .hero-image-wrapper {
     width: 100%;
+    flex: 1; /* Take exact remaining space */
+    min-height: 0;
     position: relative;
     background-color: #000;
 }
 
 .hero-image {
     width: 100%;
-    height: auto;
-    display: block; /* Prevents inline gap below image */
-    object-fit: contain; /* The image itself is now naturally 16:9 wide */
+    height: 100%;
+    display: block;
+    object-fit: fill; /* Slightly squeeze the image to mathematically fit all edges without cropping */
     border-radius: 0;
     box-shadow: none;
     border: none;
@@ -496,16 +509,43 @@ a {
 
 .hero-text-wrapper {
     position: relative;
-    flex-grow: 1;
+    flex: 0 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Push content to the bottom */
     align-items: flex-start;
     text-align: left;
-    padding: 3rem 5%;
-    width: 100%;
+    padding: 1rem 5% 1.5rem 5%; /* Restored safe bottom padding so it doesn't get cut off by screen bezels */
+    background-color: #000; /* Solid black block */
     z-index: 2;
-    background-color: #000; /* Seamless blend */
+}
+
+/* Restored title styles */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+    text-shadow: none;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.hero-subtext {
+    font-size: 1.15rem; /* Larger for better readability */
+    font-weight: 500; /* Better texture */
+    letter-spacing: 0.02em;
+    color: #d2d2d7; /* Apple Pro metallic silver */
+    margin-top: 0.5rem;
+    margin-bottom: 0; /* Remove default paragraph bottom margin! */
+    opacity: 0;
+    animation: fadeInSubtext 1.2s ease forwards 0.2s; /* Fade in immediately on load with a tiny visual ease */
+}
+
+@keyframes fadeInSubtext {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .close-modal, .close-game {
@@ -523,6 +563,8 @@ a {
 .close-modal:hover, .close-game:hover {
     color: var(--text-main);
 }
+
+
 
 .modal-body {
     display: flex;
@@ -547,17 +589,6 @@ a {
 .scroll-text { max-height: 200px; overflow-y: auto; padding-right: 10px; margin-top: 1rem; }
 .scroll-text p { margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
 
-/* FAB for dice */
-.fab {
-    position: fixed; bottom: 2rem; right: 2rem;
-    width: 50px; height: 50px; border-radius: 50%;
-    background: var(--apple-link); color: white;
-    border: none; font-size: 1.5rem; cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    z-index: 100;
-    transition: transform 0.2s;
-}
-.fab:hover { transform: scale(1.1); }
 .random-toast {
     position: fixed; bottom: 6rem; right: 2rem;
     background: var(--text-main); color: var(--bg-main);
@@ -574,9 +605,24 @@ a {
 .game-stats { display: flex; justify-content: center; gap: 2rem; font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; }
 .game-area { height: 300px; background: rgba(134, 134, 139, 0.1); border-radius: 16px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; }
 .btn-primary { background: var(--text-main); color: var(--bg-main); border: none; padding: 0.8rem 1.5rem; border-radius: 980px; font-size: 1rem; cursor: pointer; }
-.trex-entity { font-size: 5rem; cursor: pointer; user-select: none; }
-.trex-entity:active { transform: scale(0.9); }
-.game-result { text-align: center; }
+.trex-entity { font-size: 5rem; cursor: pointer; user-select: none; transform: scale(var(--trex-scale, 1)); transition: transform 0.1s ease-out; }
+.trex-entity:active { transform: scale(calc(var(--trex-scale, 1) * 0.9)) !important; transition: transform 0.05s; }
+
+/* Game 1 click particles */
+.trex-particle {
+    position: absolute;
+    color: var(--apple-link);
+    font-size: 1.5rem;
+    font-weight: bold;
+    pointer-events: none;
+    animation: floatUp 1s ease-out forwards;
+    z-index: 100;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+}.game-result { text-align: center; }
 
 /* Leaderboard */
 .leaderboard { background: rgba(134, 134, 139, 0.1); padding: 1rem 1.5rem; border-radius: 12px; margin-top: 1.5rem; text-align: left; }
@@ -586,9 +632,9 @@ a {
 .leaderboard li:last-child { border-bottom: none; }
 .leaderboard li span:first-child { font-weight: 600; color: var(--apple-link); }
 
-/* Target Game */
-.g2-area { position: relative; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='black' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='black' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='black' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='black'/%3E%3C/svg%3E") 12 12, crosshair; }
-.target { position: absolute; width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, red 20%, white 21%, white 40%, red 41%, red 60%, white 61%, white 80%, red 81%); cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='black' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='black' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='black' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='black'/%3E%3C/svg%3E") 12 12, crosshair; transition: transform 0.1s; animation: popIn 0.2s ease-out forwards; }
+/* Game 2 Specific */
+.g2-area { position: relative; cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='white' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='white' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='white' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='white' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='white'/%3E%3C/svg%3E") 12 12, crosshair; }
+.target { position: absolute; width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, red 20%, white 21%, white 40%, red 41%, red 60%, white 61%, white 80%, red 81%); cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cline x1='12' y1='2' x2='12' y2='10' stroke='white' stroke-width='2'/%3E%3Cline x1='12' y1='14' x2='12' y2='22' stroke='white' stroke-width='2'/%3E%3Cline x1='2' y1='12' x2='10' y2='12' stroke='white' stroke-width='2'/%3E%3Cline x1='14' y1='12' x2='22' y2='12' stroke='white' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='white'/%3E%3C/svg%3E") 12 12, crosshair; transition: transform 0.1s; animation: popIn 0.2s ease-out forwards; }
 @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
 
 /* Memory Game */
@@ -596,9 +642,9 @@ a {
 .memory-card { background: var(--bg-alt); border: 2px solid var(--glass-border); border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 2rem; cursor: pointer; transition: transform 0.3s; transform-style: preserve-3d; position: relative; }
 .memory-card.flipped { transform: rotateY(180deg); }
 .memory-card .front, .memory-card .back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; justify-content: center; align-items: center; border-radius: 6px; }
-.memory-card .front { background: var(--apple-link); color: var(--apple-link); }
-.memory-card .back { transform: rotateY(180deg); background: var(--bg-main); color: var(--text-main); }
-.memory-card.matched .back { background: var(--grad-green); color: white; }
+.memory-card .front { background: #1c1c1e; color: rgba(255, 255, 255, 0.15); }
+.memory-card .back { transform: rotateY(180deg); background: #000000; color: var(--text-main); }
+.memory-card.matched .back { background: #111111; color: #30D158; border: 2px solid rgba(48, 209, 88, 0.5); box-shadow: inset 0 0 15px rgba(48, 209, 88, 0.1); }
 
 /* Easter Egg */
 .trex-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ef4444; z-index: 10000; display: none; justify-content: center; align-items: center; text-align: center; color: white; }
