@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>暴龙护卫队 (T-Rex Vanguard) - 团队专属风采展示平台</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>暴龙护卫队 (T-Rex Vanguard) - 强劲协作，精致呈现</title>
+    <link rel="stylesheet" href="css/style.css?v=apple-color-fix">
+    <!-- Apple-style system fonts are defined in css/style.css -->
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,9 +22,9 @@
             </div>
             <nav class="nav-links">
                 <a href="#hero">首页</a>
-                <a href="#members">成员名录</a>
-                <a href="#arcade">互动娱乐</a>
-                <a href="#about">关于团队</a>
+                <a href="#members">成员</a>
+                <a href="#arcade">互动</a>
+                <a href="#about">团队</a>
                 <a href="#" onclick="openGameModal('docs-modal'); return false;">使用文档</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="fa-solid fa-moon"></i>
@@ -41,7 +40,7 @@
             <h1 class="glitch-title">
                 <span id="typewriter"></span><span class="cursor">|</span>
             </h1>
-            <p class="hero-subtitle">满血暴走状态，今天也准备好撕裂星球防御了！</p>
+            <p class="hero-subtitle">强劲协作，由内而外。今天，让创意全速前进。</p>
         </div>
         <a href="#members" class="scroll-down">
             <i class="fa-solid fa-chevron-down"></i>
@@ -51,7 +50,7 @@
     <!-- Members Roster -->
     <section id="members" class="members-section fp-section">
         <div class="container">
-            <h2 class="section-title text-center reveal">成员名录 <span class="highlight">Roster</span></h2>
+            <h2 class="section-title reveal">Team<span class="highlight">三位核心成员，各有强项，协同出色。</span></h2>
             
             <div class="member-grid">
                 <!-- Member 1 -->
@@ -60,12 +59,12 @@
                         <div class="card-front">
                             <div class="avatar-placeholder avatar-zeng"></div>
                             <h3>曾英棋</h3>
-                            <p class="role">项目经理 / 无敌的AI驯服者</p>
+                            <p class="role">项目经理 / AI 协作核心</p>
                         </div>
                         <div class="card-back">
                             <h3>曾英棋</h3>
-                            <p class="quote">“只要呼唤我的名字，我就会踏碎虚空，闪耀登场！”</p>
-                            <button class="btn-primary view-details" data-target="modal-1">查看详情</button>
+                            <p class="quote">“把复杂交给系统，把结果交给团队。”</p>
+                            <button class="btn-primary view-details" data-target="modal-1">进一步了解</button>
                         </div>
                     </div>
                 </div>
@@ -76,12 +75,12 @@
                         <div class="card-front">
                             <div class="avatar-placeholder avatar-liang"></div>
                             <h3>梁砾俊</h3>
-                            <p class="role">UI设计 / 测试</p>
+                            <p class="role">UI 设计 / 体验测试</p>
                         </div>
                         <div class="card-back">
                             <h3>梁砾俊</h3>
-                            <p class="quote">“在激烈的竞技与现实的松弛间，找到最完美的平衡。”</p>
-                            <button class="btn-primary view-details" data-target="modal-2">查看详情</button>
+                            <p class="quote">“快速响应，精准打磨。每个细节都刚刚好。”</p>
+                            <button class="btn-primary view-details" data-target="modal-2">进一步了解</button>
                         </div>
                     </div>
                 </div>
@@ -92,12 +91,12 @@
                         <div class="card-front">
                             <div class="avatar-placeholder avatar-zhang">张</div>
                             <h3>张鹏晖</h3>
-                            <p class="role">项目管理 / 统筹</p>
+                            <p class="role">项目统筹 / 内容规划</p>
                         </div>
                         <div class="card-back">
                             <h3>张鹏晖</h3>
-                            <p class="quote">“在抽丝剥茧中思考，在广阔世界中探索冒险。”</p>
-                            <button class="btn-primary view-details" data-target="modal-3">查看详情</button>
+                            <p class="quote">“清晰规划，让每一步探索都有方向。”</p>
+                            <button class="btn-primary view-details" data-target="modal-3">进一步了解</button>
                         </div>
                     </div>
                 </div>
@@ -106,27 +105,52 @@
     <!-- Arcade Zone -->
     <section id="arcade" class="arcade-section fp-section">
         <div class="container">
-            <h2 class="section-title text-center reveal">互动娱乐区 <span class="highlight">Arcade</span></h2>
-            <p class="text-center text-muted mb-4 reveal reveal-delay-1">为您量身定制的三个专属迷你游戏，点击卡片即刻开玩！</p>
-            
+            <h2 class="section-title reveal">Arcade<span class="highlight">小型互动，大有乐趣。轻点一下，即刻开始。</span></h2>
             <div class="arcade-grid">
                 <!-- Game 1 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-1" onclick="openGameModal('game1-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-dragon" style="color: #ef4444;"></i></div>
-                    <h3>暴龙咆哮</h3>
-                    <p>疯狂点击解压游戏，化身宇宙暴龙战士！</p>
+                <div class="arcade-card reveal reveal-delay-1" onclick="openGameModal('game1-modal')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="arcade-icon arcade-icon-red"><i class="fa-solid fa-dragon"></i></div>
+                            <h3>暴龙咆哮</h3>
+                            <p class="role">10 秒挑战</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>暴龙咆哮</h3>
+                            <p class="quote">10 秒爆发手速，感受简单直接的畅快。</p>
+                            <button class="btn-primary" type="button">开始</button>
+                        </div>
+                    </div>
                 </div>
                 <!-- Game 2 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-2" onclick="openGameModal('game2-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-crosshairs" style="color: #3b82f6;"></i></div>
-                    <h3>硬核特训</h3>
-                    <p>考验极限反应与枪法的射击打靶训练！</p>
+                <div class="arcade-card reveal reveal-delay-2" onclick="openGameModal('game2-modal')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="arcade-icon arcade-icon-blue"><i class="fa-solid fa-crosshairs"></i></div>
+                            <h3>硬核特训</h3>
+                            <p class="role">反应训练</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>硬核特训</h3>
+                            <p class="quote">快速瞄准，精准命中。把反应力调到最佳状态。</p>
+                            <button class="btn-primary" type="button">开始</button>
+                        </div>
+                    </div>
                 </div>
                 <!-- Game 3 -->
-                <div class="arcade-card glass-panel reveal reveal-delay-3" onclick="openGameModal('game3-modal')">
-                    <div class="arcade-icon"><i class="fa-solid fa-clone" style="color: #10b981;"></i></div>
-                    <h3>提瓦特记忆</h3>
-                    <p>充满元素的记忆翻牌配对挑战！</p>
+                <div class="arcade-card reveal reveal-delay-3" onclick="openGameModal('game3-modal')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="arcade-icon arcade-icon-green"><i class="fa-solid fa-clone"></i></div>
+                            <h3>提瓦特记忆</h3>
+                            <p class="role">记忆配对</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>提瓦特记忆</h3>
+                            <p class="quote">翻开、记住、匹配。让专注力成为优势。</p>
+                            <button class="btn-primary" type="button">开始</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,11 +159,11 @@
     <!-- About Section -->
     <section id="about" class="about-section fp-section">
         <div class="container reveal">
-            <h2 class="section-title">团队愿景 <span class="highlight">Vision</span></h2>
+            <h2 class="section-title">Built for Collaboration<span class="highlight">为协作而生。强劲，可靠，也足够有趣。</span></h2>
             <div class="about-content">
-                <p class="reveal reveal-delay-1"><strong>团队释义：</strong>霸气侧漏又带点中二的幽默感。战斗力爆表，虽然可能有“手短”的小缺点，但绝对是守护宇宙（项目）和平的中坚力量。</p>
-                <p class="reveal reveal-delay-2">我们是一支由多元化人才组成的创意与开发团队。在这里，有着能够用代码编织宇宙的“AI驯服者”，有着极具大局观与极速反应的“硬核玩家”，还有热爱跨界探索、动静相宜的“项目大管家”。</p>
-                <p class="reveal reveal-delay-3">我们致力于打造高颜值、交互流畅的互联网体验，探索技术的边界，并在每一次合作中实现自我突破。这是我们，暴龙护卫队 (T-Rex Vanguard)。</p>
+                <p class="reveal reveal-delay-1"><strong>暴龙护卫队</strong>，把强劲执行力、清晰审美和稳定协作放进同一个团队。</p>
+                <p class="reveal reveal-delay-2">从项目管理到界面设计，从测试验证到内容统筹，我们用更简洁的方式处理复杂问题，让每一次交付都更顺畅。</p>
+                <p class="reveal reveal-delay-3">这就是 T-Rex Vanguard。强劲，可靠，也足够有趣。</p>
             </div>
         </div>
     </section>
@@ -153,31 +177,31 @@
                 <div class="modal-left">
                     <div class="avatar-large avatar-zeng"></div>
                     <h2>曾英棋</h2>
-                    <p class="role-badge">项目经理 / 无敌的AI驯服者</p>
+                    <p class="role-badge">项目经理 / AI 协作核心</p>
                     <div class="hobbies-tags">
-                        <span class="tag"><i class="fa-solid fa-dragon"></i> 喜欢超级无敌宇宙暴龙兽</span>
+                        <span class="tag"><i class="fa-solid fa-dragon"></i> 强劲执行</span>
                     </div>
                 </div>
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>吼——！全宇宙的生灵们，竖起你们的耳朵听好了！我，就是穿梭于银河之间、令一切邪恶势力闻风丧胆的绝对正义化身，超级无敌宇宙暴龙战士！无论你是在半人马座，还是在仙女星系，只要呼唤我的名字，我就会踏碎虚空，闪耀登场！</p>
-                        <p>我诞生于宇宙大爆炸的炽热核心，灵魂中烙印着远古霸王龙的狂野与不屈。我的陨石粉碎爪凝聚着暗物质能量，能够一击撕裂星球的防御；我的星系等离子咆哮从喉咙深处喷射而出，连黑洞的视界都能瞬间蒸发；我的无敌霸王甩尾更是跨越光年维度，瞬间清空一切挡路的反派星际舰队。</p>
-                        <p>粉碎一切黑暗，守护爱与和平，这就是我的宇宙使命。准备好迎接灭绝的倒计时了吗？因为超级无敌宇宙暴龙战士，今天也处于满血暴走状态！嗷呜！</p>
+                        <p>每个项目，都需要一个稳定核心。</p>
+                        <p>我负责拆解目标、组织资源，并让 AI 真正成为团队协作的一部分。少一点混乱，多一点结果。</p>
+                        <p>强劲推进，清晰交付。让复杂任务变得简单。</p>
                     </div>
                     
-                    <h3 class="mt-4">能力雷达</h3>
+                    <h3 class="mt-4">核心能力</h3>
                     <div class="skills">
                         <div class="skill-item">
-                            <div class="skill-info"><span>物理霸权</span><span>MAX</span></div>
+                            <div class="skill-info"><span>执行力</span><span>MAX</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>星系等离子咆哮</span><span>95%</span></div>
+                            <div class="skill-info"><span>创意爆发</span><span>95%</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>AI 驯服</span><span>90%</span></div>
+                            <div class="skill-info"><span>AI 协作</span><span>90%</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
                         </div>
                     </div>
@@ -194,7 +218,7 @@
                 <div class="modal-left">
                     <div class="avatar-large avatar-liang"></div>
                     <h2>梁砾俊</h2>
-                    <p class="role-badge">战场上的硬核玩家</p>
+                    <p class="role-badge">UI 设计 / 体验测试</p>
                     <div class="hobbies-tags">
                         <span class="tag"><i class="fa-solid fa-gamepad"></i> 游戏</span>
                         <span class="tag"><i class="fa-solid fa-music"></i> 听音乐</span>
@@ -204,11 +228,12 @@
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>大家好！我是一名将反应速度与战术意识刻进DNA里的FPS游戏老兵。从精准的预瞄、极限的拉枪到瞬息万变的战术转移，FPS不仅锻炼了我极致的专注力，更让我深刻懂得了团队协作与大局观的重要性。无论是在枪林弹雨中寻找破绽，还是在劣势残局里力挽狂澜，我都极度享受那种肾上腺素飙升、带领队伍走向胜利的快感。</p>
-                        <p>离开硝烟弥漫的电子竞技场，生活中的我却有着截然不同的平静一面。在闲暇时光里，我是一个纯粹的音乐爱好者。戴上耳机，将世界调成静音，旋律就是我最好的放松剂。沉浸在音乐中能帮我迅速洗去高强度对局后的精神疲惫，让我在激烈的数字竞技与松弛的现实生活之间，找到最完美的平衡。</p>
+                        <p>好的体验，来自对细节的持续打磨。</p>
+                        <p>我关注界面的秩序、反馈的速度，以及每一次点击之后的感受。快速发现问题，精准修正问题。</p>
+                        <p>让页面看起来清爽，用起来顺手。</p>
                     </div>
                     
-                    <h3 class="mt-4">技能维系</h3>
+                    <h3 class="mt-4">核心能力</h3>
                     <div class="skills">
                         <div class="skill-item">
                             <div class="skill-info"><span>UI 视觉设计</span><span>95%</span></div>
@@ -219,7 +244,7 @@
                             <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>FPS 枪法</span><span>99%</span></div>
+                            <div class="skill-info"><span>反应速度</span><span>99%</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 99%; background: var(--accent-color);"></div></div>
                         </div>
                     </div>
@@ -236,7 +261,7 @@
                 <div class="modal-left">
                     <div class="avatar-large avatar-zhang">张</div>
                     <h2>张鹏晖</h2>
-                    <p class="role-badge">动静相宜的探索者</p>
+                    <p class="role-badge">项目统筹 / 内容规划</p>
                     <div class="hobbies-tags">
                         <span class="tag"><i class="fa-solid fa-language"></i> 说英语</span>
                         <span class="tag"><i class="fa-solid fa-book"></i> 阅读 (推理小说)</span>
@@ -246,15 +271,15 @@
                 <div class="modal-right">
                     <h3>自我介绍</h3>
                     <div class="scroll-text">
-                        <p>大家好，很高兴能在这里向大家做个自我介绍。在平时的生活中，我对语言和文字有着浓厚的兴趣，尤其喜欢英语，它不仅是一门实用的交流工具，更是我了解多元文化、拓宽视野的重要窗口。</p>
-                        <p>课余时间，阅读是我不可或缺的精神食粮。我特别享受沉浸在日系推理小说中的时光，比如东野圭吾笔下那些充满缜密逻辑与复杂人性的故事，总能让我沉下心来，在抽丝剥茧中获得许多思考。</p>
-                        <p>除了在书本和语言的世界里探索，音乐和游戏也是我生活中绝佳的放松方式。我喜欢在独处时安静地听听音乐，而在游戏方面，我非常享受像原神这样拥有丰富剧情和广阔地图的探索类游戏，在自由自在的虚拟世界中冒险，能给我带来极大的乐趣与好奇心的满足。</p>
+                        <p>清晰的规划，让团队走得更稳。</p>
+                        <p>我擅长梳理信息、组织内容，并把复杂想法整理成可执行的路径。语言、阅读和探索，都是我理解世界的方式。</p>
+                        <p>先看清方向，再把每一步做到位。</p>
                     </div>
                     
-                    <h3 class="mt-4">综合能力</h3>
+                    <h3 class="mt-4">核心能力</h3>
                     <div class="skills">
                         <div class="skill-item">
-                            <div class="skill-info"><span>项目统筹规划</span><span>90%</span></div>
+                            <div class="skill-info"><span>项目统筹</span><span>90%</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
                         </div>
                         <div class="skill-item">
@@ -266,7 +291,7 @@
                             <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>提瓦特大陆探索度</span><span>100%</span></div>
+                            <div class="skill-info"><span>探索能力</span><span>100%</span></div>
                             <div class="progress-bar"><div class="progress" style="width: 100%; background: var(--accent-color);"></div></div>
                         </div>
                     </div>
@@ -288,12 +313,12 @@
                 </div>
             </div>
             <div class="game-area" id="g1-area">
-                <button id="g1-start-btn" class="btn-primary game-start-btn">开始试炼</button>
+                <button id="g1-start-btn" class="btn-primary game-start-btn">开始</button>
                 <div id="g1-trex" class="trex-entity" style="display: none;">
                     <i class="fa-solid fa-dragon"></i>
                 </div>
                 <div id="g1-result" class="game-result" style="display: none;">
-                    <h3>试炼结束！</h3>
+                    <h3>完成。</h3>
                     <p>点击次数: <span id="g1-final-score">0</span></p>
                     <p class="g1-rank" id="g1-rank"></p>
                     <button id="g1-restart-btn" class="btn-primary mt-4">再来一次</button>
@@ -316,9 +341,9 @@
                 </div>
             </div>
             <div class="game-area g2-area" id="g2-area">
-                <button id="g2-start-btn" class="btn-primary game-start-btn">开始特训</button>
+                <button id="g2-start-btn" class="btn-primary game-start-btn">开始</button>
                 <div id="g2-result" class="game-result" style="display: none; z-index: 10;">
-                    <h3 id="g2-result-title">特训结束！</h3>
+                    <h3 id="g2-result-title">完成。</h3>
                     <p>最终得分: <span id="g2-final-score">0</span></p>
                     <p id="g2-accuracy"></p>
                     <button id="g2-restart-btn" class="btn-primary mt-4">再来一次</button>
@@ -340,10 +365,10 @@
                 </div>
             </div>
             <div class="game-area g3-area" id="g3-area">
-                <button id="g3-start-btn" class="btn-primary game-start-btn" style="z-index:10; position:absolute;">开始探索</button>
+                <button id="g3-start-btn" class="btn-primary game-start-btn" style="z-index:10; position:absolute;">开始</button>
                 <div id="g3-board" class="memory-board" style="display:none;"></div>
                 <div id="g3-result" class="game-result" style="display: none; z-index: 10;">
-                    <h3>探索完成！</h3>
+                    <h3>完成。</h3>
                     <p>总共消耗步数: <span id="g3-final-moves">0</span></p>
                     <button id="g3-restart-btn" class="btn-primary mt-4">重新探索</button>
                     <div id="g3-leaderboard" class="leaderboard mt-4"></div>
@@ -362,26 +387,26 @@
         <div class="game-container glass-panel" style="background: var(--bg-main);">
             <button class="close-game" onclick="closeGameModal('docs-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header">
-                <h2><i class="fa-solid fa-book"></i> 网页使用文档</h2>
+                <h2><i class="fa-solid fa-book"></i> 使用文档</h2>
             </div>
             <div class="game-area" style="overflow-y: auto; padding: 2rem; display: block; text-align: left;">
                 <h3 class="mb-2" style="color: var(--primary-color);">1. 基础功能</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>深浅色模式切换</strong>：点击右上角的月亮/太阳图标，可以一键切换网站的深色和浅色主题，并在本地保存您的偏好。</li>
-                    <li><strong>导航跳转</strong>：点击顶部导航栏可快速平滑滚动至对应板块。</li>
+                    <li><strong>主题切换</strong>：一键切换深色或浅色外观，并自动保存偏好。</li>
+                    <li><strong>快速导航</strong>：点击顶部导航，平滑前往对应板块。</li>
                 </ul>
 
                 <h3 class="mb-2" style="color: var(--primary-color);">2. 互动娱乐区</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>暴龙咆哮</strong>：解压点击小游戏。开始后需在10秒内疯狂点击屏幕中央的暴龙。</li>
-                    <li><strong>硬核特训</strong>：射击反应训练。点击屏幕上的红白靶子，漏点或点错会扣除生命值。</li>
-                    <li><strong>提瓦特记忆</strong>：翻牌配对。点击卡牌翻转，配对两张相同的元素即可消除。</li>
+                    <li><strong>暴龙咆哮</strong>：10 秒点击挑战，简单直接。</li>
+                    <li><strong>硬核特训</strong>：快速瞄准，精准命中。</li>
+                    <li><strong>提瓦特记忆</strong>：翻牌配对，考验专注。</li>
                 </ul>
 
                 <h3 class="mb-2" style="color: var(--primary-color);">3. 隐藏彩蛋与小工具</h3>
                 <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                    <li><strong>意见反馈</strong>：点击右下角的“信封”浮动按钮，即可打开反馈界面，向我们提供建议或发送邮件。</li>
-                    <li><strong>暴龙觉醒彩蛋</strong>：在页面最底部的页脚（Footer），连续快速点击 <strong>5 次</strong> “暴龙护卫队” Logo，即可触发暴龙战士咆哮的隐藏彩蛋！</li>
+                    <li><strong>意见反馈</strong>：点击右下角信封按钮，把想法告诉我们。</li>
+                    <li><strong>暴龙觉醒</strong>：连续点击页脚 Logo 5 次，发现隐藏惊喜。</li>
                     <li><strong>陨石来袭彩蛋</strong>：请等待 60 秒，一颗巨大的陨石将从天而降，暴龙护卫队将出击防御，有个小彩蛋等着你！请打开黑夜模式以获得更佳观赏体验。</li>
                 </ul>
             </div>
@@ -411,15 +436,15 @@
         <div class="game-container glass-panel" style="max-width: 450px; height: auto; text-align: center; background: var(--bg-main); margin: 0 auto;">
             <button class="close-game" onclick="closeGameModal('feedback-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header" style="justify-content: center; border-bottom: none; padding-bottom: 0;">
-                <h2 style="margin: 0; font-size: 1.8rem;"><i class="fa-solid fa-paper-plane" style="color: var(--primary-color);"></i> 期待您的反馈</h2>
+                <h2 style="margin: 0; font-size: 1.75rem; font-weight: 600; line-height: 1.15; letter-spacing: 0;"><i class="fa-solid fa-paper-plane" style="color: var(--primary-color);"></i> 期待你的反馈</h2>
             </div>
             <div class="game-area" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem; background: transparent;">
-                <p style="color: var(--text-muted); margin: 0; line-height: 1.6; font-size: 1.1rem; text-align: center;">
-                    感谢您访问暴龙护卫队！如果您对我们的项目有任何意见、建议或发现了 Bug，随时欢迎联系我们。您的反馈是我们进步的动力。
+                <p style="color: var(--text-muted); margin: 0; line-height: 1.47; font-size: 1.05rem; font-weight: 400; letter-spacing: 0; text-align: center;">
+                    每一条反馈，都会让体验更进一步。发现问题，或有新的想法，欢迎告诉我们。
                 </p>
                 <div class="feedback-email-box" style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); width: 100%;">
-                    <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">反馈专属邮箱</p>
-                    <p style="margin: 0; font-size: 1.4rem; font-weight: 800; color: var(--primary-color); user-select: all;">2708203325@QQ.COM</p>
+                    <p style="margin: 0; font-size: 0.9rem; font-weight: 400; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 0;">反馈专属邮箱</p>
+                    <p style="margin: 0; font-size: 1.3rem; font-weight: 600; line-height: 1.2; color: var(--primary-color); user-select: all; letter-spacing: 0;">2708203325@QQ.COM</p>
                 </div>
             </div>
         </div>

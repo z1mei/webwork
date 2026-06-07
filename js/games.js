@@ -34,10 +34,10 @@ function updateLeaderboard(gameKey, newScore, sortAscending, label) {
     
     const container = document.getElementById(`${gameKey}-leaderboard`);
     if (container) {
-        let html = `<h4>🏆 历史前三</h4><ol>`;
+        let html = `<h4>最佳记录</h4><ol>`;
         scores.forEach((s, idx) => {
             let medal = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : '🥉');
-            html += `<li><span>${medal} TOP ${idx + 1}</span> <span>${s} ${label}</span></li>`;
+            html += `<li><span>${medal} 第 ${idx + 1} 名</span> <span>${s} ${label}</span></li>`;
         });
         html += `</ol>`;
         container.innerHTML = html;
@@ -99,11 +99,11 @@ function endGame1() {
     g1FinalScore.innerText = g1Score;
     updateLeaderboard('g1', g1Score, false, '次');
     
-    let rank = "幼崽暴龙";
-    if (g1Score > 30) rank = "成年暴龙";
-    if (g1Score > 60) rank = "超合金暴龙战士";
-    if (g1Score > 90) rank = "银河霸主！";
-    g1Rank.innerText = `称号: ${rank}`;
+    let rank = "新手表现";
+    if (g1Score > 30) rank = "稳定发挥";
+    if (g1Score > 60) rank = "强劲手感";
+    if (g1Score > 90) rank = "顶级表现";
+    g1Rank.innerText = `表现：${rank}`;
 }
 
 g1StartBtn.addEventListener('click', startGame1);
