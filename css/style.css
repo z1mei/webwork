@@ -443,7 +443,12 @@ button { cursor: pointer; border: none; font-family: inherit; font-weight: var(-
     background-position: center;
     color: transparent;
 }
-.avatar-zhang { background: linear-gradient(135deg, #10b981, #14b8a6); }
+.avatar-zhang {
+    background-image: url('../image/张图片.jpg');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+}
 
 .member-card h3,
 .arcade-card h3 { font-size: 1.65rem; font-weight: var(--weight-semibold); line-height: 1.15; margin-bottom: 0.5rem; }
