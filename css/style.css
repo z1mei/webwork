@@ -120,11 +120,10 @@ a {
 
 .nav-container {
     width: 100%;
-    max-width: 1440px;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
 }
 
 .nav-container .logo {
@@ -186,8 +185,9 @@ a {
 }
 
 .section-content {
-    max-width: 1440px;
-    width: 100%;
+    max-width: 90rem;
+    width: 90%;
+    margin: 0 auto;
     z-index: 10;
 }
 
@@ -259,8 +259,9 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    width: 100%;
-    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 90rem;
 }
 
 .member-container.image-left {
@@ -269,6 +270,17 @@ a {
 
 .member-container.image-right {
     flex-direction: row;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fluid scaling for ultra-wide monitors (Windows HD/2K/4K) */
+@media (min-width: 1440px) {
+    html {
+        font-size: 1.1111vw;
+    }
 }
 
 .member-container .section-content {
@@ -296,11 +308,11 @@ a {
 
 .member-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 31.25rem;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     object-fit: cover;
 }
 
@@ -379,7 +391,7 @@ a {
     background: var(--bg-main);
     border-radius: 20px;
     padding: 3rem 2rem;
-    width: 280px;
+    width: 17.5rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--glass-border);
@@ -478,7 +490,7 @@ a {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     width: 90%;
-    max-width: 800px;
+    max-width: 50rem;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -492,6 +504,8 @@ a {
     position: relative;
     padding-top: 48px; /* Offset for navbar */
     padding-bottom: 0; /* Remove inherited 4rem padding from apple-section! */
+    padding-left: 0;
+    padding-right: 0;
     height: 100vh; /* Fallback */
     height: 100dvh; /* Dynamic viewport height to prevent browser chrome from hiding the bottom */
     width: 100%;
@@ -531,7 +545,7 @@ a {
     justify-content: flex-end; /* Push content to the bottom */
     align-items: flex-start;
     text-align: left;
-    padding: 1rem 5% 1.5rem 5%; /* Restored safe bottom padding so it doesn't get cut off by screen bezels */
+    padding: 1rem 5% 1.5rem 2%; /* Restored safe bottom padding so it doesn't get cut off by screen bezels, added slight left padding as requested */
     background-color: #000; /* Solid black block */
     z-index: 2;
 }
@@ -643,7 +657,7 @@ a {
 .modal-right { width: 70%; text-align: left; }
 
 .avatar-large {
-    width: 100px; height: 100px;
+    width: 6.25rem; height: 6.25rem;
     border-radius: 50%;
     display: flex; justify-content: center; align-items: center;
     font-size: 3rem; color: white; margin: 0 auto 1rem;
@@ -655,7 +669,7 @@ a {
 .hobbies-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
 .tag { background: rgba(134, 134, 139, 0.2); padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.8rem; color: var(--text-main); }
 
-.scroll-text { max-height: 200px; overflow-y: auto; padding-right: 10px; margin-top: 1rem; }
+.scroll-text { margin-top: 1rem; }
 .scroll-text p { margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
 
 .random-toast {
