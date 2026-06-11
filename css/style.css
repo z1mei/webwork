@@ -272,8 +272,9 @@ a {
 }
 
 .member-container .section-content {
-    flex: 1;
     text-align: left;
+    width: fit-content;
+    max-width: 50%;
     min-width: 0;
 }
 
@@ -283,6 +284,14 @@ a {
     display: flex;
     justify-content: center;
     min-width: 0;
+}
+
+.member-container.image-left .member-image-wrapper {
+    justify-content: flex-start;
+}
+
+.member-container.image-right .member-image-wrapper {
+    justify-content: flex-end;
 }
 
 .member-image {
@@ -778,6 +787,10 @@ a {
     .member-container.image-right {
         flex-direction: column;
         gap: 2rem;
+    }
+    
+    .member-container .member-image-wrapper {
+        justify-content: center !important;
     }
     
     .member-container .section-content {
