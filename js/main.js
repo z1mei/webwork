@@ -144,45 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 5. Easter Egg (T-Rex Roar)
-    const footerLogo = document.getElementById('footer-logo');
-    const trexContainer = document.getElementById('trex-easter-egg');
-    let clickCount = 0;
-    let clickTimer = null;
 
-    footerLogo.addEventListener('click', () => {
-        clickCount++;
-        
-        // Reset count if pauses too long between clicks (2 seconds)
-        clearTimeout(clickTimer);
-        clickTimer = setTimeout(() => {
-            clickCount = 0;
-        }, 2000);
-
-        if (clickCount >= 5) {
-            triggerEasterEgg();
-            clickCount = 0;
-        }
-    });
-
-    function triggerEasterEgg() {
-        trexContainer.classList.add('active');
-        
-        // Try to play a roar sound (might be blocked by browser autoplay policy if no recent interaction, but click should allow it)
-        try {
-            // using a free online sound bite for demo
-            const roar = new Audio('https://assets.mixkit.co/active_storage/sfx/87/87-preview.mp3');
-            roar.volume = 0.5;
-            roar.play();
-        } catch (e) {
-            console.log("Audio play failed: ", e);
-        }
-
-        // Hide after 3 seconds
-        setTimeout(() => {
-            trexContainer.classList.remove('active');
-        }, 3000);
-    } // Missing brace added here
 
     // Force page to top on reload and clear hash to prevent auto-scrolling down
     if (window.location.hash) {
