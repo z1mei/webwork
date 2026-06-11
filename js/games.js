@@ -95,7 +95,7 @@ function endGame1() {
     clearInterval(g1Timer);
     g1Playing = false;
     g1Trex.style.display = 'none';
-    g1Result.style.display = 'block';
+    g1Result.style.display = 'flex';
     g1FinalScore.innerText = g1Score;
     updateLeaderboard('g1', g1Score, false, '次');
     
@@ -265,7 +265,7 @@ function endGame2() {
     clearTimeout(g2TargetTimeout);
     removeTargets();
     
-    g2Result.style.display = 'block';
+    g2Result.style.display = 'flex';
     g2FinalScore.innerText = g2Score;
     updateLeaderboard('g2', g2Score, false, '分');
     
@@ -406,7 +406,7 @@ function unflipCards() {
 
 function endGame3() {
     g3Board.style.display = 'none';
-    g3Result.style.display = 'block';
+    g3Result.style.display = 'flex';
     g3FinalMoves.innerText = g3Moves;
     updateLeaderboard('g3', g3Moves, true, '步');
 }

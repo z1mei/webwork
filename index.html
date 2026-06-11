@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>暴龙护卫队 (T-Rex Vanguard) - 团队专属风采展示平台</title>
-    <link rel="stylesheet" href="css/style.css?v=28">
+    <link rel="stylesheet" href="css/style.css?v=36">
     <!-- Google Fonts replaced with System Fonts in CSS, but keep FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -231,6 +231,10 @@
     <!-- Game 1: T-Rex Clicker -->
     <div id="game1-modal" class="game-overlay">
         <div class="game-container glass-panel">
+            <div class="help-game-wrapper">
+                <button class="help-game"><i class="fa-solid fa-circle-question"></i> 玩法</button>
+                <div class="help-tooltip"><strong>玩法说明：</strong><br>疯狂点击屏幕中央的暴龙即可获得积分。倒计时 10 秒内，拼尽全力挑战你的手速极限吧！</div>
+            </div>
             <button class="close-game" onclick="closeGameModal('game1-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header">
                 <h2><i class="fa-solid fa-dragon"></i> 暴龙咆哮</h2>
@@ -245,11 +249,15 @@
                     <i class="fa-solid fa-dragon"></i>
                 </div>
                 <div id="g1-result" class="game-result" style="display: none;">
-                    <h3>试炼结束！</h3>
-                    <p>点击次数: <span id="g1-final-score">0</span></p>
-                    <p class="g1-rank" id="g1-rank"></p>
-                    <button id="g1-restart-btn" class="btn-primary mt-4">再来一次</button>
-                    <div id="g1-leaderboard" class="leaderboard mt-4"></div>
+                    <div class="result-left">
+                        <h3>试炼结束！</h3>
+                        <p>点击次数: <span id="g1-final-score">0</span></p>
+                        <p class="g1-rank" id="g1-rank"></p>
+                        <button id="g1-restart-btn" class="btn-primary mt-4">再来一次</button>
+                    </div>
+                    <div class="result-right">
+                        <div id="g1-leaderboard" class="leaderboard mt-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,6 +266,10 @@
     <!-- Game 2: Aim Trainer -->
     <div id="game2-modal" class="game-overlay">
         <div class="game-container glass-panel">
+            <div class="help-game-wrapper">
+                <button class="help-game"><i class="fa-solid fa-circle-question"></i> 玩法</button>
+                <div class="help-tooltip"><strong>玩法说明：</strong><br>屏幕会不断随机刷出标靶，迅速点击击碎它们！漏掉标靶会扣除生命，3 颗红心耗尽则提前结束。坚持 30 秒获取最高分！</div>
+            </div>
             <button class="close-game" onclick="closeGameModal('game2-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header">
                 <h2><i class="fa-solid fa-crosshairs"></i> 硬核特训</h2>
@@ -270,11 +282,15 @@
             <div class="game-area g2-area" id="g2-area">
                 <button id="g2-start-btn" class="btn-primary game-start-btn">开始特训</button>
                 <div id="g2-result" class="game-result" style="display: none; z-index: 10;">
-                    <h3 id="g2-result-title">特训结束！</h3>
-                    <p>最终得分: <span id="g2-final-score">0</span></p>
-                    <p id="g2-accuracy"></p>
-                    <button id="g2-restart-btn" class="btn-primary mt-4">再来一次</button>
-                    <div id="g2-leaderboard" class="leaderboard mt-4"></div>
+                    <div class="result-left">
+                        <h3 id="g2-result-title">特训结束！</h3>
+                        <p>最终得分: <span id="g2-final-score">0</span></p>
+                        <p id="g2-accuracy"></p>
+                        <button id="g2-restart-btn" class="btn-primary mt-4">再来一次</button>
+                    </div>
+                    <div class="result-right">
+                        <div id="g2-leaderboard" class="leaderboard mt-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,6 +299,10 @@
     <!-- Game 3: Memory Match -->
     <div id="game3-modal" class="game-overlay">
         <div class="game-container glass-panel">
+            <div class="help-game-wrapper">
+                <button class="help-game"><i class="fa-solid fa-circle-question"></i> 玩法</button>
+                <div class="help-tooltip"><strong>玩法说明：</strong><br>经典的记忆翻牌配对。每次翻开两张卡片，图案相同即配对成功。尝试用最少的步数找出所有配对的元素符号！</div>
+            </div>
             <button class="close-game" onclick="closeGameModal('game3-modal')"><i class="fa-solid fa-xmark"></i></button>
             <div class="game-header">
                 <h2><i class="fa-solid fa-clone"></i> 提瓦特记忆</h2>
@@ -295,10 +315,14 @@
                 <button id="g3-start-btn" class="btn-primary game-start-btn" style="z-index:10; position:absolute;">开始探索</button>
                 <div id="g3-board" class="memory-board" style="display:none;"></div>
                 <div id="g3-result" class="game-result" style="display: none; z-index: 10;">
-                    <h3>探索完成！</h3>
-                    <p>总共消耗步数: <span id="g3-final-moves">0</span></p>
-                    <button id="g3-restart-btn" class="btn-primary mt-4">重新探索</button>
-                    <div id="g3-leaderboard" class="leaderboard mt-4"></div>
+                    <div class="result-left">
+                        <h3>探索完成！</h3>
+                        <p>总共消耗步数: <span id="g3-final-moves">0</span></p>
+                        <button id="g3-restart-btn" class="btn-primary mt-4">重新探索</button>
+                    </div>
+                    <div class="result-right">
+                        <div id="g3-leaderboard" class="leaderboard mt-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
