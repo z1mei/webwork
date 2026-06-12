@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <title>张鹏晖 - 个人主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { padding: 40px 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg-main); }
+        .modal-container { position: relative; max-width: 900px; width: 100%; height: auto; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border-radius: 24px; }
+        .modal-body { display: flex; gap: 40px; flex-direction: row; }
+        @media (max-width: 768px) { .modal-body { flex-direction: column; } }
+        .channel-block { margin-bottom: 25px; }
+        .channel-block h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-main); border-bottom: 1px solid var(--glass-border); padding-bottom: 5px; }
+        .channel-block p { color: var(--text-muted); line-height: 1.6; font-size: 1rem; margin: 0; }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 10px 24px; border-radius: 20px; background: rgba(255,255,255,0.1); color: var(--text-main); text-decoration: none; font-weight: bold; transition: all 0.3s; border: 1px solid var(--glass-border); }
+        .back-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="modal-container glass-panel">
+        <div class="modal-body">
+            <div class="modal-left" style="flex: 1;">
+                <div class="avatar-large" style="background-image: url('../image/avatar_zhang.png'); background-size: cover; background-position: center; width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 20px auto; border: 2px solid var(--glass-border);"></div>
+                <h2 style="text-align: center; margin-bottom: 5px; background: var(--grad-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">张鹏晖</h2>
+                <p class="role-badge" style="text-align: center; margin-bottom: 20px;">动静相宜的探索者</p>
+                <div class="hobbies-tags" style="justify-content: center; margin-bottom: 30px;">
+                    <span class="tag"><i class="fa-solid fa-language"></i> 说英语</span> <span class="tag"><i class="fa-solid fa-book"></i> 阅读 (推理小说)</span> <span class="tag"><i class="fa-solid fa-compass"></i> 原神 (探索)</span>
+                </div>
+                <div style="text-align: center;">
+                    <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回主页</a>
+                </div>
+            </div>
+            <div class="modal-right" style="flex: 2;">
+                <div class="channel-block">
+                    <h3>📚 专业与学习</h3>
+                    <p>无论是跨越语言的鸿沟进行交流，还是在推理小说中层层剥茧地推演逻辑，我始终热衷于在复杂的信息中寻找最优解。将这种敏锐的洞察力带入到项目统筹中，一切看似繁杂的挑战，都会变得清晰且井然有序。</p>
+                </div>
+                <div class="channel-block">
+                    <h3>🎮 兴趣与探索</h3>
+                    <p>正如在广阔无垠的开放世界中自由穿梭，真正的乐趣，在于发现未知的可能。</p>
+                </div>
+                <div class="channel-block">
+                    <h3>☕ 生活与态度</h3>
+                    <p>探索，是不断打破边界的旅程。动静相宜，方能游刃有余。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
